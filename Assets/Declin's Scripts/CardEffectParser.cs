@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using CardGame;
 
+// Author: Declin Anderson
+// May 2, 2025
+
 /// <summary>
 /// Reads the effects of the card and creates results based on that
 /// </summary>
@@ -78,6 +81,7 @@ public class CardEffectParser : MonoBehaviour
         }
     }
 
+    // These are temporary functions they will be replaced with relavent functions just help with testing
     private void DrawCards(int amount) => Debug.Log($"Draw {amount} cards");
     private void GainShield(int amount) => Debug.Log($"Gain {amount} shields");
     private void Heal(int amount) => Debug.Log($"Heal {amount} health");

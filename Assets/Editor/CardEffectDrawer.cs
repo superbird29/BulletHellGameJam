@@ -4,6 +4,9 @@ using System;
 using System.Linq;
 using CardGame;
 
+// Author: Declin Anderson
+// May 2, 2025
+
 /// <summary>
 /// Handles the logic of the card generator to be more user friendly
 /// </summary>
@@ -14,8 +17,8 @@ public class CardEffectDrawer : PropertyDrawer
     /// Handles generating the GUI for the card asset in the inspector
     /// </summary>
     /// <param name="position">Where it will be generated</param>
-    /// <param name="property"></param>
-    /// <param name="label"></param>
+    /// <param name="property">The container for the information</param>
+    /// <param name="label">The name for the property</param>
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
         // Starts the UI Block for handling the layout

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using CardGame;
 
+// Author: Declin Anderson
+// May 2, 2025
+
 /// <summary>
 /// Holds the information of the card that the dictionary will read
 /// </summary>
-
 [CreateAssetMenu(fileName = "New Card", menuName = "Card System/Card")]
 public class Card : ScriptableObject
 {
@@ -18,22 +20,23 @@ public class Card : ScriptableObject
     [SerializeField] public List<CardEffect> effects;
 }
 
+// Handles the information for if the card effect is based on changing a weapon
 [System.Serializable]
 public class WeaponToggleData
 {
-    public WeaponType weaponType;
-    public bool isActive;
+    public WeaponType weaponType; // The weapon type i.e. ice beam, bullet, sword
+    public bool isActive; // If the weapon is being set to active
 }
 
 [System.Serializable]
 public class CardEffect
 {
-    public CardEffectCategory category;
+    public CardEffectCategory category; // The category the effect belongs to i.e. Player, Projectile, Weapon
     public CardEffectType effectType; //i.e. GainShield, ModifyBulletAngle
     public int value;   //i.e. 1 shield, 45 degrees
 
     // Only used if category == Weapon
-    public WeaponType weaponType;
-    public bool isActive;
+    public WeaponType weaponType; // The weapon type
+    public bool isActive; // If the weapon is active
 }
 
