@@ -36,7 +36,7 @@ public class RoundManager : MonoBehaviour
     private void Update()
     {
         pointsObj.GetComponent<TMP_Text>().text = "Points: "+ points.ToString();
-        RoundTimeObj.GetComponent<TMP_Text>().text = "Time Remaining: " + roundTimer.ToString();
+        RoundTimeObj.GetComponent<TMP_Text>().text = "Time Remaining: " + roundTimer.ToString("f2");
         if(roundTimer <= 0)
         {
             RoundEnd = true;
@@ -54,8 +54,8 @@ public class RoundManager : MonoBehaviour
 
     IEnumerator RoundTime()
     {
-        yield return new WaitForSeconds(.01f);
-        roundTimer -= .01f;
+        yield return new WaitForSeconds(.02f);
+        roundTimer -= .02f;
         StartCoroutine(RoundTime());
     }
 
