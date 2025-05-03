@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6130340b6e513e142a7cb9e880df129c, type: 3}
+  m_Name: FireAndThenMoveRight
+  m_EditorClassIdentifier: 
+  nextState: {fileID: 11400000, guid: 7f08f212d82d2324dadb88309479107e, type: 2}
+  cooldownTime: 1
+  repititions: 5
