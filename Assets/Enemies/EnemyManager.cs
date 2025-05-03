@@ -69,8 +69,6 @@ public class EnemyManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Got a collision player");
-
         if (collision.gameObject.CompareTag("Enemy")) 
         { 
             Destroy(collision.gameObject); 
