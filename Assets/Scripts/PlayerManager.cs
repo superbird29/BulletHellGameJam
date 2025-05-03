@@ -15,7 +15,7 @@ public class PlayerManager : MonoBehaviour
     //Player Info
     [SerializeField] int HP = 3;
     [SerializeField] List<GameObject> HPObj;
-    [SerializeField] GameObject emptyHPOBJ;
+    [SerializeField] Sprite emptyHPOBJ;
     [SerializeField] int Shield = 0;
     [SerializeField] List<GameObject> ShieldOBJ;
 
