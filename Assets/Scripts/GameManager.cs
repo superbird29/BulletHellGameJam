@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public PlayerManager _PlayerManager;
     public RoundManager _RoundManager;
 
+    public EnemyManager _EnemyManager;
+
 
     private static bool m_ShuttingDown = false;
     private static object m_Lock = new object();

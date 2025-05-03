@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using ND_VariaBULLET;
 using UnityEngine;
 
-public class EnemyBehaviourScript : MonoBehaviour
+public class EnemyStateMachine : MonoBehaviour
 {
     EnemyState currentState;
 

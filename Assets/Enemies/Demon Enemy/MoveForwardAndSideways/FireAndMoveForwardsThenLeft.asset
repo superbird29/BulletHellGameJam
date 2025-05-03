@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d19d4f6d0b6a05e4586c1ba259d45435, type: 3}
-  m_Name: MoveLeft
+  m_Script: {fileID: 11500000, guid: ee02c10f989eb7f4f8d4f83bbe292664, type: 3}
+  m_Name: FireAndMoveForwardsThenLeft
   m_EditorClassIdentifier: 
-  nextState: {fileID: 11400000, guid: 837071a6932528941ad33daea53d69d6, type: 2}
-  distanceToMove: {x: 5, y: 0, z: 0}
-  speed: 0.1
+  nextState: {fileID: 11400000, guid: 756b2d23f4717884387052e0089a21d3, type: 2}
+  distanceToMove: {x: 0, y: -2, z: 0}
+  speed: 0
   useEnemySpeed: 1

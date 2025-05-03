@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MoveAsAProjectile
   m_EditorClassIdentifier: 
   nextState: {fileID: 11400000, guid: b7ac2f2bbc1aa764c913c6a85c2d4e29, type: 2}
-  distanceToMove: {x: 50, y: -300, z: 0}
-  speed: 5
+  distanceToMove: {x: 5, y: -30, z: 0}
+  speed: 0.5
   useEnemySpeed: 0
