@@ -7,7 +7,7 @@ using UnityEngine;
 // May 2, 2025
 
 /// <summary>
-/// Handles the the player's hand as well as the player deck and discard
+/// Handles the player's hand as well as the player deck and discard
 /// </summary>
 public class Deck : MonoBehaviour
 {

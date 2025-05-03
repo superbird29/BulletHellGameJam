@@ -28,6 +28,7 @@ public class WeaponToggleData
     public bool isActive; // If the weapon is being set to active
 }
 
+// Handles the information for the card effects
 [System.Serializable]
 public class CardEffect
 {
