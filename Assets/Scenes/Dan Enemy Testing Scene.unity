@@ -1257,6 +1257,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6640422263227965486, guid: de6841fb1ee2f9e438ed625e6e9be315, type: 3}
+      propertyPath: deathState
+      value: 
+      objectReference: {fileID: 11400000, guid: b7ac2f2bbc1aa764c913c6a85c2d4e29, type: 2}
     - target: {fileID: 7630501093749447654, guid: de6841fb1ee2f9e438ed625e6e9be315, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.25
@@ -1275,7 +1279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8877845126529429907, guid: de6841fb1ee2f9e438ed625e6e9be315, type: 3}
       propertyPath: m_IncludeLayers.m_Bits
-      value: 2048
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 8877845126529429907, guid: de6841fb1ee2f9e438ed625e6e9be315, type: 3}
       propertyPath: m_ContactCaptureLayers.m_Bits

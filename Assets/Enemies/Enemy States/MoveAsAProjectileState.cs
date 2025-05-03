@@ -12,6 +12,7 @@ public class MoveAsAProjectileState : MoveState
     private DamagerBody damagerBody;
 
     protected override void InnerEnterState(){
+        base.InnerEnterState();
         damagerBody = enemy.GetComponent<DamagerBody>();
         if(damagerBody == null){
             Debug.Log("You forgot to attach a damager body");
@@ -21,6 +22,7 @@ public class MoveAsAProjectileState : MoveState
         damagerBody.enabled = true;
     }
 
-    protected override void InnerExitState(){}
+    protected override void InnerExitState(){
+    }
 
 }

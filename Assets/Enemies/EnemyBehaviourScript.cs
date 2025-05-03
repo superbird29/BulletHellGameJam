@@ -8,6 +8,8 @@ public class EnemyBehaviourScript : MonoBehaviour
 {
     EnemyState currentState;
 
+    public DeathState deathState;
+
     [SerializeReference]
     public EnemyState startingState;
 
@@ -35,7 +37,7 @@ public class EnemyBehaviourScript : MonoBehaviour
 
     public void EnterState(EnemyState state){
         changingState = true;
-        EnemyState newState = ScriptableObject.Instantiate(state);
+        EnemyState newState = Instantiate(state);
         if(currentState != null){
         currentState.ExitState();
         }
@@ -56,5 +58,10 @@ public class EnemyBehaviourScript : MonoBehaviour
         Debug.Log("Time: " + time);
         yield return new WaitForSeconds(time);
         action.Invoke();
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        EnterState(deathState);
     }
 }
