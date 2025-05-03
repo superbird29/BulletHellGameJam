@@ -25,6 +25,8 @@ public class EnemyStateMachine : MonoBehaviour
 
     void Start()
     {
+        EnemyManager enemyManager = GameManager.Instance._EnemyManager;
+        enemyManager.AddEnemyToList(this);
         controller = GetComponentInChildren<BasePattern>();
         if(controller != null){
         controller.TriggerAutoFire = false;

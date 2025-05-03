@@ -10,17 +10,28 @@ public class EnemyGroupManager : MonoBehaviour
 
     [SerializeField] int columns;
 
-    [SerializeField] float staggerRowDistance;
+    [SerializeField] bool staggerRows;
 
-    [SerializeField] float spawnAreaPaddingLR;
-
-    [SerializeField] float spawnAreaPaddingTB;
+    [SerializeField] SpawnZone zone;
 
     private Bounds spawnArea;
 
+    private EnemyManager enemyManager;
+
+    enum SpawnZone
+    {
+        Right,
+        Middle,
+        Left,
+        All
+    }
+
+    
+
     void Start()
     {
-        spawnArea = GetComponent<BoxCollider2D>().bounds;
+        enemyManager = GameManager.Instance._EnemyManager;
+        spawnArea = adjustSpawnArea(enemyManager.spawnArea);
         float cellWidth = spawnArea.size.x / columns;
         float cellHeight = spawnArea.size.y / rows;
 
@@ -30,10 +41,31 @@ public class EnemyGroupManager : MonoBehaviour
         {
             for (int col = 0; col < columns; col++)
             {
-                float x = bottomLeft.x + (col + (row % 2 == 1 ? 1.0f : 0.5f)) * cellWidth;
+                float x = bottomLeft.x + (col + (staggerRows && row % 2 == 1 ? 1.0f : 0.5f)) * cellWidth;
                 float y = bottomLeft.y + (row + 0.5f) * cellHeight;
                 Instantiate(enemyPrefab,new Vector3(x,y,0f),Quaternion.identity);
             }
         }
+    }
+
+    Bounds adjustSpawnArea(Bounds originalArea){
+        if(zone == SpawnZone.All) return originalArea;
+        
+        float thirdWidth = originalArea.size.x / 3f;
+        Vector3 size = new Vector3(thirdWidth, originalArea.size.y, originalArea.size.z);
+
+        Vector3 center = originalArea.min + new Vector3(thirdWidth / 2f, originalArea.size.y / 2f, 0);
+
+        switch (zone)
+        {
+            case SpawnZone.Middle:
+                center.x += thirdWidth;
+                break;
+            case SpawnZone.Right:
+                center.x += 2f * thirdWidth;
+                break;
+        }
+
+        return new Bounds(center, size);
     }
 }
