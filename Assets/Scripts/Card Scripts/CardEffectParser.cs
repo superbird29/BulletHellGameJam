@@ -56,26 +56,29 @@ public class CardEffectParser : MonoBehaviour
         {
             // If the Player is drawing a card
             case CardEffectType.Draw:
-                DrawCards(effect.value);
+                GameManager.Instance._DeckManager.DrawCard(effect.value);
+                break;
+            case CardEffectType.HandSizeIncrease:
+                GameManager.Instance._DeckManager.IncreaseHandSize(effect.value);
                 break;
             // If the Player is healing
             case CardEffectType.Heal:
-                Heal(effect.value);
+                GameManager.Instance._PlayerManager.ChangeLife(effect.value);
                 break;
             // If the Player is Gaining shields
             case CardEffectType.GainShield:
-                GainShield(effect.value);
+                GameManager.Instance._PlayerManager.ChangeShield(effect.value);
                 break;
             // If the player is shooting bullets from new angles
-            case CardEffectType.ModifyBulletAngle:
-                ModifyAngle(effect.value);
+            case CardEffectType.BulletDamage:
+                ModifyDamage(effect.value);
                 break;
             // If the player is shooting bullets faster
-            case CardEffectType.ModifyBulletSpeed:
+            case CardEffectType.FasterFirerate:
                 ModifySpeed(effect.value);
                 break;
             // If the player is shooting bigger or smaller bullets
-            case CardEffectType.ModifyBulletSize:
+            case CardEffectType.BulletSize:
                 ModifySize(effect.value);
                 break;
             case CardEffectType.ToggleWeapon:
@@ -92,7 +95,7 @@ public class CardEffectParser : MonoBehaviour
     private void DrawCards(int amount) => Debug.Log($"Draw {amount} cards");
     private void GainShield(int amount) => Debug.Log($"Gain {amount} shields");
     private void Heal(int amount) => Debug.Log($"Heal {amount} health");
-    private void ModifyAngle(int amount) => Debug.Log($"Change bullet angle by {amount} degrees");
+    private void ModifyDamage(int amount) => Debug.Log($"Change bullet damage by {amount} times");
     private void ModifySpeed(int amount) => Debug.Log($"Change bullet speed by {amount} times");
     private void ModifySize(int amount) => Debug.Log($"Change bullet size by {amount} times");
     private void ToggleWeapon(string name, bool isActive) => Debug.Log($"Your weapon changed to {name} and it is set to {isActive}");

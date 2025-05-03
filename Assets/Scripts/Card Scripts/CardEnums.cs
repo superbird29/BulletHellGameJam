@@ -26,26 +26,26 @@ namespace CardGame
         GainShield,
         Heal,
         TakeDamage,
+        GainBomb,
 
         //Projectile
-        ModifyBulletAngle,
-        ModifyBulletSpeed,
-        ModifyBulletSize,
+        BulletSize,
+        FasterFirerate,
+        BulletDamage,
 
         // Weapon
         ToggleWeapon,
 
         // Card
         Draw,
-        Discard
+        Discard,
+        HandSizeIncrease
     }
 
     // The types of weapon that the player could potentially use
     public enum WeaponType{
-        IceBeam,
-        ChainLightning,
-        FireBall,
-        Sword,
-        Bullet
+        HomingIce,
+        LightningLaser,
+        FireballBullet
     }
 }

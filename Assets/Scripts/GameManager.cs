@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
     public PlayerManager _PlayerManager;
     public RoundManager _RoundManager;
 
+    // This is reference to the Deck script it holds information for the player hand and deck
+    public Deck _DeckManager;
+
 
     private static bool m_ShuttingDown = false;
     private static object m_Lock = new object();

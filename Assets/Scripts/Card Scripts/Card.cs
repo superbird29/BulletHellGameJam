@@ -39,5 +39,6 @@ public class CardEffect
     // Only used if category == Weapon
     public WeaponType weaponType; // The weapon type
     public bool isActive; // If the weapon is active
+    public GameObject weaponObject;
 }
 
