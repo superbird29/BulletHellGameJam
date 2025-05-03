@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50da03931c4ce294ab4f9962960605e0, type: 3}
-  m_Name: MoveAsAProjectile
+  m_Script: {fileID: 11500000, guid: ee02c10f989eb7f4f8d4f83bbe292664, type: 3}
+  m_Name: FireAndMoveForwardsThenRight
   m_EditorClassIdentifier: 
-  nextState: {fileID: 11400000, guid: b7ac2f2bbc1aa764c913c6a85c2d4e29, type: 2}
-  distanceToMove: {x: 5, y: -30, z: 0}
-  speed: 0.2
-  useEnemySpeed: 0
+  nextState: {fileID: 11400000, guid: 2ed461a9fdf13bb40b7fa34aa59f989a, type: 2}
+  distanceToMove: {x: 0, y: -2, z: 0}
+  speed: 0
+  useEnemySpeed: 1

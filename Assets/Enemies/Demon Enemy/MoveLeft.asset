@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MoveLeft
   m_EditorClassIdentifier: 
   nextState: {fileID: 11400000, guid: 837071a6932528941ad33daea53d69d6, type: 2}
-  distanceToMove: {x: 100, y: 0, z: 0}
-  speed: 2
+  distanceToMove: {x: 5, y: 0, z: 0}
+  speed: 0.1
   useEnemySpeed: 1
