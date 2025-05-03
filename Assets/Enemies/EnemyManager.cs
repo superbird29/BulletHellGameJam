@@ -5,10 +5,6 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-
-    GameManager gameManager;
-
-    PlayerManager playerManager;
     
     public Bounds spawnArea;
 
@@ -26,7 +22,6 @@ public class EnemyManager : MonoBehaviour
 
     void Start()
     {
-        playerManager = GameManager.Instance._PlayerManager;
         spawnArea = GetComponent<BoxCollider2D>().bounds;
         round = 0;
         currentRoundEnemies = new List<EnemyStateMachine>();
