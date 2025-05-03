@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -16,8 +17,10 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] int HP = 3;
     [SerializeField] List<GameObject> HPObj;
     [SerializeField] Sprite emptyHPOBJ;
+    [SerializeField] Sprite fullHPOBJ;
     [SerializeField] int Shield = 0;
     [SerializeField] List<GameObject> ShieldOBJ;
+    [SerializeField] Sprite ShieldOBJSprite;
 
     [SerializeField] Rigidbody2D Rigidbody;
 
@@ -26,11 +29,43 @@ public class PlayerManager : MonoBehaviour
     {
         MovementHorizontal = Input.GetAxis("Horizontal");
         MovementVertical = Input.GetAxis("Vertical");
+        if(HP <= 0)
+        {
+            //lose
+        }
     }
 
     public void SetHomingTrue(bool homing)
     {
         //set homing true
+    }
+
+    public void ChangeLife(int life)
+    {
+        HP += life;
+        if(life < 0)
+        {
+            HPObj[HP].GetComponent<Image>().sprite = emptyHPOBJ;
+        }
+
+        if(life > 0)
+        {
+            HPObj[HP].GetComponent<Image>().sprite = fullHPOBJ;
+        }
+    }
+
+    public void ChangeShield(int shield)
+    {
+        Shield += shield;
+        if (shield < 0)
+        {
+            HPObj[HP].GetComponent<Image>().sprite = emptyHPOBJ;
+        }
+
+        if (shield > 0)
+        {
+            HPObj[HP].GetComponent<Image>().sprite = fullHPOBJ;
+        }
     }
 
     void FixedUpdate()
