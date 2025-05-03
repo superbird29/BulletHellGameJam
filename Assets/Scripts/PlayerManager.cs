@@ -14,7 +14,10 @@ public class PlayerManager : MonoBehaviour
 
     //Player Info
     [SerializeField] int HP = 3;
+    [SerializeField] List<GameObject> HPObj;
+    [SerializeField] Sprite emptyHPOBJ;
     [SerializeField] int Shield = 0;
+    [SerializeField] List<GameObject> ShieldOBJ;
 
     [SerializeField] Rigidbody2D Rigidbody;
 
@@ -23,7 +26,11 @@ public class PlayerManager : MonoBehaviour
     {
         MovementHorizontal = Input.GetAxis("Horizontal");
         MovementVertical = Input.GetAxis("Vertical");
+    }
 
+    public void SetHomingTrue(bool homing)
+    {
+        //set homing true
     }
 
     void FixedUpdate()
