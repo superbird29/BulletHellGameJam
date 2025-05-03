@@ -9,7 +9,7 @@ public class EnemyGroupManager : MonoBehaviour
     [SerializeField] int rows;
 
     [SerializeField] int columns;
-
+    
     [SerializeField] bool staggerRows;
 
     [SerializeField] SpawnZone zone;
@@ -26,8 +26,6 @@ public class EnemyGroupManager : MonoBehaviour
         All
     }
 
-    
-
     void Start()
     {
         enemyManager = GameManager.Instance._EnemyManager;
@@ -41,6 +39,7 @@ public class EnemyGroupManager : MonoBehaviour
         {
             for (int col = 0; col < columns; col++)
             {
+
                 float x = bottomLeft.x + (col + (staggerRows && row % 2 == 1 ? 1.0f : 0.5f)) * cellWidth;
                 float y = bottomLeft.y + (row + 0.5f) * cellHeight;
                 Instantiate(enemyPrefab,new Vector3(x,y,0f),Quaternion.identity);
