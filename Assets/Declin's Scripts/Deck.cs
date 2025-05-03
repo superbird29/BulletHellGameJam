@@ -82,8 +82,10 @@ public class Deck : MonoBehaviour
             // Changing the text of the card prefab to reflect what it does
             card.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = playerHand[i].cardName;
             card.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = playerHand[i].description;
+            // Setting up the button for the cards so that when they are select they perform their action
             Button button = card.GetComponent<Button>();
             Card currentCard = playerHand[i];
+            // What the button does 1. Executes Card 2. Adds card to discard 3. Removes the card from player's hand 4. destroys the cards
             button.onClick.AddListener(() => 
             {
                 CardEffectParser.Instance.ExecuteCard(currentCard);
