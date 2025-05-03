@@ -16,13 +16,20 @@ public class CardEffectParser : MonoBehaviour
     //[SerializeField] private PlayerStats playerStats; // Replace with your player/stat handler
     [SerializeField] public Card[] cards; //Test cards
 
-    public void Start()
-    {
-        for(int i  = 0; i < cards.Length; i++)
-        {
-            ExecuteCard(cards[i]);
-        }
+    // Creating an instance for singleton
+    public static CardEffectParser Instance { get; private set;}
 
+    // Doing the singleton behavior
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        { 
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
 
     /// <summary>

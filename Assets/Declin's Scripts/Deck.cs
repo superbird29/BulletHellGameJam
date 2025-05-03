@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 // Author: Declin Anderson
 // May 2, 2025
@@ -12,17 +14,23 @@ using UnityEngine;
 public class Deck : MonoBehaviour
 {
     // The Pool of cards the player has access to
-    [SerializeField] public List<Card> cardPool = new List<Card>();
+    [SerializeField] private List<Card> cardPool = new List<Card>();
     // The Pool of cards in the player's hand
-    [SerializeField]public List<Card> playerHand = new List<Card>();
+    [SerializeField] private List<Card> playerHand = new List<Card>();
     // The Pool of cards in the player's deck
-    [SerializeField]public List<Card> deck = new List<Card>();
+    [SerializeField] private List<Card> deck = new List<Card>();
     // The cards in the player's discard
-    [SerializeField]public List<Card> discard = new List<Card>();
+    [SerializeField] private List<Card> discard = new List<Card>();
     // Number of cards the player can have in their hand
-    [SerializeField] public int handSize = 4;
+    [SerializeField] private int handSize = 4;
     // the starting size or can be the max size of the player deck
-    [SerializeField] public int deckSize = 10;
+    [SerializeField] private int deckSize = 10;
+    // The prefab that the card is using for information
+    [SerializeField] private GameObject cardPrefab;
+    // The spacing between cards in your hand (visual)
+    [SerializeField] private float cardSpacing = 150f;
+    // Where in the 2d space the hand is located for cards
+    [SerializeField] private Transform handPosition;
 
     // Generates the Deck when the scene is started
     public void Start()
@@ -59,6 +67,32 @@ public class Deck : MonoBehaviour
             playerHand.Add(deck[cardPull]);
             deck.RemoveAt(cardPull);
         }
+
+        // Returns the x position for where the first card should be placed
+        float xPosition = -(handSize - 1) * cardSpacing / 2f;
+
+        for(int i = 0; i < handSize; i++)
+        {
+            // Getting the position that the card will be shifted
+            Vector3 position = new Vector3(xPosition + i * cardSpacing, 0f, 0f);
+            // the card object being instantiated
+            GameObject card = Instantiate(cardPrefab, handPosition);
+            // the position of the card being adjusted
+            card.transform.localPosition = position;
+            // Changing the text of the card prefab to reflect what it does
+            card.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = playerHand[i].cardName;
+            card.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = playerHand[i].description;
+            Button button = card.GetComponent<Button>();
+            Card currentCard = playerHand[i];
+            button.onClick.AddListener(() => 
+            {
+                CardEffectParser.Instance.ExecuteCard(currentCard);
+                discard.Add(currentCard);
+                playerHand.Remove(currentCard);
+                Destroy(card);
+            });
+        }
+
     }
     public void AddToDeck()
     {

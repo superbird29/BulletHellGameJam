@@ -44,7 +44,7 @@ namespace CardGame
     public enum WeaponType{
         IceBeam,
         ChainLightning,
-        HomingRocket,
+        FireBall,
         Sword,
         Bullet
     }
