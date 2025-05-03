@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dragon Fly Anim
+  m_Name: Demon
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,7 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -604858144, guid: 5303aed7a490ad044a77b6878da1730a, type: 3}
+      value: {fileID: -955476021, guid: 165605eb3bfc0e04bbfbb347c294c079, type: 3}
+    - time: 0.13333334
+      value: {fileID: -1272872786, guid: 165605eb3bfc0e04bbfbb347c294c079, type: 3}
+    - time: 0.26666668
+      value: {fileID: -1215373361, guid: 165605eb3bfc0e04bbfbb347c294c079, type: 3}
+    - time: 0.4
+      value: {fileID: -777490993, guid: 165605eb3bfc0e04bbfbb347c294c079, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,13 +50,16 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -604858144, guid: 5303aed7a490ad044a77b6878da1730a, type: 3}
+    - {fileID: -955476021, guid: 165605eb3bfc0e04bbfbb347c294c079, type: 3}
+    - {fileID: -1272872786, guid: 165605eb3bfc0e04bbfbb347c294c079, type: 3}
+    - {fileID: -1215373361, guid: 165605eb3bfc0e04bbfbb347c294c079, type: 3}
+    - {fileID: -777490993, guid: 165605eb3bfc0e04bbfbb347c294c079, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.016666668
+    m_StopTime: 0.4166667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
