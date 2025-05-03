@@ -64,8 +64,7 @@ public class EnemyStateMachine : MonoBehaviour
         action.Invoke();
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
+    private void OnDestroy() {
         EnterState(deathState);
     }
 }
