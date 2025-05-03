@@ -12,7 +12,7 @@ public class MoveState : EnemyState
 
     public bool useEnemySpeed = true;
 
-    private Vector3 destination;
+    protected Vector3 destination;
 
     protected override void InnerEnterState()
     {

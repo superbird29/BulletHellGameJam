@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using ND_VariaBULLET;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyStateMachine : MonoBehaviour
@@ -19,6 +20,8 @@ public class EnemyStateMachine : MonoBehaviour
 
     public BasePattern controller;
 
+    public GameManager gameManager;
+
 
     void Start()
     {
@@ -27,7 +30,6 @@ public class EnemyStateMachine : MonoBehaviour
         controller.TriggerAutoFire = false;
         }
         EnterState(startingState);
-
     }
 
     void FixedUpdate() {
