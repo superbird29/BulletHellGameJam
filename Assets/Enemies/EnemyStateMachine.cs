@@ -2,9 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using ND_VariaBULLET;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemyBehaviourScript : MonoBehaviour
+public class EnemyStateMachine : MonoBehaviour
 {
     EnemyState currentState;
 
@@ -19,6 +20,8 @@ public class EnemyBehaviourScript : MonoBehaviour
 
     public BasePattern controller;
 
+    public GameManager gameManager;
+
 
     void Start()
     {
@@ -27,7 +30,6 @@ public class EnemyBehaviourScript : MonoBehaviour
         controller.TriggerAutoFire = false;
         }
         EnterState(startingState);
-
     }
 
     void FixedUpdate() {

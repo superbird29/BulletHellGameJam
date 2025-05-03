@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: DemonSpawnIn
   m_EditorClassIdentifier: 
   nextState: {fileID: 11400000, guid: 34958d9433a602b448adbb055cd50709, type: 2}
-  distanceToMove: {x: 0, y: -100, z: 0}
-  speed: 2
+  distanceToMove: {x: 0, y: -2, z: 0}
+  speed: 0.1
   useEnemySpeed: 0
