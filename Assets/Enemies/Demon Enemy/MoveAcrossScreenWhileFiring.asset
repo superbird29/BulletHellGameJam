@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MoveAcrossScreenWhileFiring
   m_EditorClassIdentifier: 
   nextState: {fileID: 11400000, guid: b7ac2f2bbc1aa764c913c6a85c2d4e29, type: 2}
-  distanceToMove: {x: 0, y: -200, z: 0}
+  distanceToMove: {x: 0, y: -20, z: 0}
   speed: 0
   useEnemySpeed: 1

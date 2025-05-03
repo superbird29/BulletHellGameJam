@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50da03931c4ce294ab4f9962960605e0, type: 3}
-  m_Name: MoveAsAProjectile
+  m_Script: {fileID: 11500000, guid: 0dee086d911a1ca4aba4113ac107f7e3, type: 3}
+  m_Name: Round 1
   m_EditorClassIdentifier: 
-  nextState: {fileID: 11400000, guid: b7ac2f2bbc1aa764c913c6a85c2d4e29, type: 2}
-  distanceToMove: {x: 5, y: -30, z: 0}
-  speed: 0.2
-  useEnemySpeed: 0
+  waves:
+  - {fileID: 5703223572795317429, guid: e514774deeb7a6e4ba863eb9b3faab35, type: 3}
+  - {fileID: 5703223572795317429, guid: e514774deeb7a6e4ba863eb9b3faab35, type: 3}

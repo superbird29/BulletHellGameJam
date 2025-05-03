@@ -6,11 +6,11 @@ using UnityEngine;
 public class EnemyState : ScriptableObject
 {
 
-    protected EnemyBehaviourScript enemy;
+    protected EnemyStateMachine enemy;
 
     public EnemyState nextState;
 
-    public void EnterState(EnemyBehaviourScript enemy){
+    public void EnterState(EnemyStateMachine enemy){
         this.enemy = enemy;
         Debug.Log("Entering State: " + this.GetType().Name.ToString());
         InnerEnterState();
