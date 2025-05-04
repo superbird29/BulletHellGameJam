@@ -176,15 +176,15 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  emptyHPOBJ: {fileID: 0}
-  fullHPOBJ: {fileID: 0}
+  emptyHPOBJ: {fileID: 21300000, guid: 918cc2e22f59e88498ad1bd00394d563, type: 3}
+  fullHPOBJ: {fileID: 21300000, guid: 39ddcc5425c3f334bb53949b16a819a2, type: 3}
   Shield: 0
-  ShieldOBJ:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  ShieldOBJSprite: {fileID: 0}
+  ShieldOBJList: []
+  ShieldOBJ: {fileID: 0}
+  Bomb: 0
+  Blank: 0
   Rigidbody: {fileID: 6899516783275193752}
+  CanDamage: 1
 --- !u!50 &6899516783275193752
 Rigidbody2D:
   serializedVersion: 4

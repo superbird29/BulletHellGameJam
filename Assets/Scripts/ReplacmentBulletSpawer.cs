@@ -7,7 +7,7 @@ public class ReplacmentBulletSpawer : MonoBehaviour
     GameObject Bullet;
     GameObject fireLocation;
     Vector2 fireDirection; //direction of fire
-    int bulletSpeed; //speed of projectile
+    float bulletSpeed; //speed of projectile
     float rateOfFire; //Less is faster
     bool pauseFire = true;
 
@@ -36,6 +36,7 @@ public class ReplacmentBulletSpawer : MonoBehaviour
         {
             //Continious fire
             GameObject bul = Instantiate(Bullet, fireLocation.transform.position, Quaternion.identity);
+            //bul.GetComponent<NewBullet>().
             
         }
     }

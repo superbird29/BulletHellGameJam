@@ -19,8 +19,11 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] Sprite emptyHPOBJ;
     [SerializeField] Sprite fullHPOBJ;
     [SerializeField] int Shield = 0;
-    [SerializeField] List<GameObject> ShieldOBJ;
-    [SerializeField] Sprite ShieldOBJSprite;
+    [SerializeField] List<GameObject> ShieldOBJList;
+    [SerializeField] GameObject ShieldOBJ;
+    [SerializeField] GameObject ShieldSpawnLoc;
+    [SerializeField] int Bomb = 0;
+    [SerializeField] int Blank = 0;
 
     [SerializeField] Rigidbody2D Rigidbody;
     [SerializeField] bool CanDamage = true;
@@ -45,6 +48,9 @@ public class PlayerManager : MonoBehaviour
     {
         if(HP == 3 && life > 0)
         {
+            Shield += life;
+            Destroy(ShieldOBJList[ShieldOBJList.Count]);
+            ShieldOBJList.RemoveAt(ShieldOBJList.Count);
             return;
         }
         else
@@ -64,18 +70,23 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    public void ChangeShield(int shield)
+    public void GainShield(int shield)
     {
         Shield += shield;
-        if (shield < 0)
+        for(int i = 0; i < shield; i++)
         {
-            HPObj[HP].GetComponent<Image>().sprite = emptyHPOBJ;
+            //ShieldOBJList.Add(Instantiate(ShieldOBJ, ShieldSpawnLoc.transform + Vector3()));
         }
+    }
 
-        if (shield > 0)
-        {
-            HPObj[HP].GetComponent<Image>().sprite = fullHPOBJ;
-        }
+    public void GainBomb(int bomb)
+    {
+        Bomb += bomb;
+    }
+
+    public void GainBlank(int blank)
+    {
+        Blank += blank;
     }
 
     void FixedUpdate()
@@ -90,6 +101,7 @@ public class PlayerManager : MonoBehaviour
             ChangeLife(-1);
             //triggure flash and inv
             StartCoroutine(Invincibility());
+            StartCoroutine(Flicker());
         }
     }
 
