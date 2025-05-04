@@ -1307,6 +1307,7 @@ GameObject:
   - component: {fileID: 797513089}
   - component: {fileID: 797513088}
   - component: {fileID: 797513091}
+  - component: {fileID: 797513092}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1398,6 +1399,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78a6ba0dab66f554e8ceea385b9b0249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &797513092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797513087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14ab736cd87a72940ac2d419269a71bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &823117037
@@ -2814,7 +2827,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1600491070}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 797513092}
+        m_TargetAssemblyTypeName: LevelSwitcher, Assembly-CSharp
+        m_MethodName: SwitchLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1600491070
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -42,15 +42,24 @@ public class PlayerManager : MonoBehaviour
 
     public void ChangeLife(int life)
     {
-        HP += life;
+        if(HP == 3 && life > 0)
+        {
+            return;
+        }
+        else
+        {
+            HP += life;
+        }
         if(life < 0)
         {
-            HPObj[HP].GetComponent<Image>().sprite = emptyHPOBJ;
+            if(HP >= 0)
+                HPObj[HP].GetComponent<Image>().sprite = emptyHPOBJ;
         }
 
         if(life > 0)
         {
-            HPObj[HP].GetComponent<Image>().sprite = fullHPOBJ;
+            if (HP <= 3)
+                HPObj[HP].GetComponent<Image>().sprite = fullHPOBJ;
         }
     }
 
@@ -71,5 +80,13 @@ public class PlayerManager : MonoBehaviour
     void FixedUpdate()
     {
         Rigidbody.velocity = new Vector2(MovementHorizontal * MoveSpeed, MovementVertical * MoveSpeed);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.name == "" )
+        {
+
+        }
     }
 }

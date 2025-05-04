@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelSwitcher : MonoBehaviour
 {
     //switches scene with level name
-    void SwitchLevel(string lvlname)
+    public void SwitchLevel(string lvlname)
     {
         SceneManager.LoadScene(lvlname);
     }
