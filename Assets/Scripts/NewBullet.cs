@@ -5,12 +5,30 @@ using UnityEngine;
 public class NewBullet : MonoBehaviour
 {
     float BuleltSpeed = 1;
+    float bulletLife = 1;
     Vector2 fireDirection = new Vector2(0, -1); //direction of fire
+    [SerializeField] Rigidbody2D Rigidbody;
 
 
-
-    void Update()
+    private void Start()
     {
-        transform.position += new Vector3(fireDirection.x + BuleltSpeed, fireDirection.y * BuleltSpeed, 0);
+        StartCoroutine(Decay());
+    }
+
+    public void UpdateInfo(float bulletSpeed, Vector2 firedirection)
+    {
+        BuleltSpeed = bulletSpeed;
+        fireDirection = firedirection;
+    }
+
+    void FixedUpdate()
+    {
+        Rigidbody.velocity = new Vector2(fireDirection.x * BuleltSpeed, fireDirection.y * BuleltSpeed);
+    }
+
+    IEnumerator Decay()
+    {
+        yield return new WaitForSeconds(bulletLife);
+        Destroy(this);
     }
 }

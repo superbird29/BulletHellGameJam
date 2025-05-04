@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class ReplacmentBulletSpawer : MonoBehaviour
 {
-    GameObject Bullet;
-    GameObject fireLocation;
-    Vector2 fireDirection; //direction of fire
-    float bulletSpeed; //speed of projectile
-    float rateOfFire; //Less is faster
-    bool pauseFire = true;
-
-
+    [SerializeField] GameObject Bullet;
+    [SerializeField] GameObject fireLocation;
+    [SerializeField] Vector2 fireDirection; //direction of fire
+    [SerializeField] float bulletSpeed; //speed of projectile
+    [SerializeField] float rateOfFire; //Less is faster delay in sec
+    [SerializeField] float bulletLife; //life of bullets as a float in secs
+    [SerializeField] bool pauseFire = true;
 
     public void StartFiring()
     {
-        pauseFire = false;
+        FireEndlessly();
     }
     public void SwitchBullet(GameObject newbullet)
     {
@@ -34,11 +33,21 @@ public class ReplacmentBulletSpawer : MonoBehaviour
     {
         if(!pauseFire)
         {
-            //Continious fire
-            GameObject bul = Instantiate(Bullet, fireLocation.transform.position, Quaternion.identity);
-            //bul.GetComponent<NewBullet>().
-            
+
         }
+    }
+
+    public void FireEndlessly()
+    {
+        //Continious fire
+        GameObject bul = Instantiate(Bullet, fireLocation.transform.position, Quaternion.identity);
+        bul.GetComponent<NewBullet>().UpdateInfo(bulletSpeed, fireDirection);
+        StartCoroutine(Delay(rateOfFire));
+    }
+
+    public void FireAmounts(int amount, float afterShotDelay)
+    {
+        StartCoroutine(FireAmount(amount, afterShotDelay));
     }
 
     //Fire x amount of times
@@ -48,6 +57,7 @@ public class ReplacmentBulletSpawer : MonoBehaviour
         for(int i = 0; i < amount; i++)
         {
             GameObject bul = Instantiate(Bullet, fireLocation.transform.position, Quaternion.identity);
+            bul.GetComponent<NewBullet>().UpdateInfo(bulletSpeed, fireDirection);
             yield return new WaitForSeconds(rateOfFire);
         }
         StartCoroutine(Delay(afterShotDelay));
@@ -56,6 +66,6 @@ public class ReplacmentBulletSpawer : MonoBehaviour
     IEnumerator Delay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        pauseFire = true;
+        FireEndlessly();
     }
 }
