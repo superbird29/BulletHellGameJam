@@ -23,6 +23,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] Sprite ShieldOBJSprite;
 
     [SerializeField] Rigidbody2D Rigidbody;
+    [SerializeField] bool CanDamage = true;
 
     // Update is called once per frame
     void Update()
@@ -84,9 +85,63 @@ public class PlayerManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.name == "" )
+        if(collision.tag == "Bullet" && CanDamage)
         {
-
+            ChangeLife(-1);
+            //triggure flash and inv
+            StartCoroutine(Invincibility());
         }
+    }
+
+    IEnumerator Invincibility()
+    {
+        CanDamage = false;
+        yield return new WaitForSeconds(.25f);
+        CanDamage = true;
+    }
+
+    IEnumerator Flicker()
+    {
+        float n = 0;
+        yield return new WaitUntil(() => n < .5f);
+        this.GetComponent<Animator>().enabled = false;
+        this.GetComponent<SpriteRenderer>().enabled = false;
+        n += .05f;
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<Animator>().enabled = true;
+        this.GetComponent<SpriteRenderer>().enabled = true;
+        n += .05f;
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<Animator>().enabled = false;
+        this.GetComponent<SpriteRenderer>().enabled = false;
+        n += .05f;
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<Animator>().enabled = true;
+        this.GetComponent<SpriteRenderer>().enabled = true;
+        n += .05f;
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<Animator>().enabled = false;
+        this.GetComponent<SpriteRenderer>().enabled = false;
+        n += .05f;
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<Animator>().enabled = true;
+        this.GetComponent<SpriteRenderer>().enabled = true;
+        n += .05f;
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<Animator>().enabled = false;
+        this.GetComponent<SpriteRenderer>().enabled = false;
+        n += .05f;
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<Animator>().enabled = true;
+        this.GetComponent<SpriteRenderer>().enabled = true;
+        n += .05f;
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<Animator>().enabled = false;
+        this.GetComponent<SpriteRenderer>().enabled = false;
+        n += .05f;
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<Animator>().enabled = true;
+        this.GetComponent<SpriteRenderer>().enabled = true;
+        n += .05f;
     }
 }
