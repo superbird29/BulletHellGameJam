@@ -88,6 +88,7 @@ public class CardEffectParser : MonoBehaviour
             case CardEffectType.BulletSize:
                 ModifySize(effect.value);
                 break;
+            // If the player is changing what weapon they are using
             case CardEffectType.ToggleWeapon:
                 ToggleWeapon(effect.weaponType.ToString(), effect.isActive);
                 break;

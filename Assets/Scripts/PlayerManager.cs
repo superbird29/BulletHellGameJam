@@ -49,8 +49,8 @@ public class PlayerManager : MonoBehaviour
         if(HP == 3 && life > 0)
         {
             Shield += life;
-            Destroy(ShieldOBJList[ShieldOBJList.Count]);
-            ShieldOBJList.RemoveAt(ShieldOBJList.Count);
+            //Destroy(ShieldOBJList[ShieldOBJList.Count]);
+            //ShieldOBJList.RemoveAt(ShieldOBJList.Count);
             return;
         }
         else
