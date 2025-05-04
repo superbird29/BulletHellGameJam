@@ -7,8 +7,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName ="Assets/EnemyState/FiringState")]
 public class FiringState : EnemyState
 {
-    private bool firing = false;
-    private bool finishedFiring = false;
+    protected bool firing = false;
+    protected bool finishedFiring = false;
 
     public float firingTime = 5f;
 

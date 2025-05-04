@@ -22,10 +22,12 @@ public class EnemyStateMachine : MonoBehaviour
 
     public GameManager gameManager;
 
+    EnemyManager enemyManager;
+
 
     void Start()
     {
-        EnemyManager enemyManager = GameManager.Instance._EnemyManager;
+        enemyManager = GameManager.Instance._EnemyManager;
         enemyManager.AddEnemyToList(this);
         controller = GetComponentInChildren<BasePattern>();
         if(controller != null){
@@ -64,8 +66,7 @@ public class EnemyStateMachine : MonoBehaviour
         action.Invoke();
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        EnterState(deathState);
+    private void OnDestroy() {
+        enemyManager.RemoveEnemyFromList(this);
     }
 }

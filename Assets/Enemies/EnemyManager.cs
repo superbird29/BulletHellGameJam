@@ -5,16 +5,12 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-
-    GameManager gameManager;
-
-    PlayerManager playerManager;
     
     public Bounds spawnArea;
 
     private bool allEnemiesDead;
 
-    bool inbetweenRounds;
+    bool inbetweenRounds = false;
 
     public int round;
 
@@ -24,23 +20,23 @@ public class EnemyManager : MonoBehaviour
 
     public List<EnemyStateMachine> currentRoundEnemies;
 
+    public GameObject middleOfPlayArea;
+
     void Start()
     {
-        playerManager = GameManager.Instance._PlayerManager;
         spawnArea = GetComponent<BoxCollider2D>().bounds;
         round = 0;
-        inbetweenRounds = true;
         currentRoundEnemies = new List<EnemyStateMachine>();
-        StartNextRound(30f);
+        allEnemiesDead = true;
     }
 
     void Update()
     {
-        allEnemiesDead = inbetweenRounds || (currentRoundEnemies.Count == 0 && currentRound.waves.Count == 0);
-
         if(allEnemiesDead && round < rounds.Count){
             StartNextRound(30f);
         }
+
+        allEnemiesDead = inbetweenRounds || (currentRoundEnemies.Count == 0 && currentRound.waves.Count == 0);
     }
 
     void StartNextRound(float roundTime){
@@ -73,4 +69,11 @@ public class EnemyManager : MonoBehaviour
         SpawnWave(wave);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy")) 
+        { 
+            Destroy(collision.gameObject); 
+        } 
+    }
 }

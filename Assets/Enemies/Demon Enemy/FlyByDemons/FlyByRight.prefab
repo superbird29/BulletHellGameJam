@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5703223572795317429}
   - component: {fileID: 8475833394506646243}
   m_Layer: 0
-  m_Name: EnemyGroupManager
+  m_Name: FlyByRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,11 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa163bcca9417f141a4f5928b1781829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 5954330110074851655, guid: 6f6cb8062709ca548a212710f934c013, type: 3}
+  enemyPrefab: {fileID: 3570695242835275953, guid: d12d74caf4f02f147beeefeeca67f686, type: 3}
   rows: 5
   columns: 1
   staggerRows: 0
-  zone: 2
+  zone: 0
 --- !u!61 &8475833394506646243
 BoxCollider2D:
   m_ObjectHideFlags: 0
