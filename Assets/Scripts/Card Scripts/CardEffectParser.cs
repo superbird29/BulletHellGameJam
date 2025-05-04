@@ -66,15 +66,15 @@ public class CardEffectParser : MonoBehaviour
                 break;
             // If the Player is Gaining shields
             case CardEffectType.GainShield:
-                GameManager.Instance._PlayerManager.ChangeShield(effect.value);
+                GameManager.Instance._PlayerManager.GainShield(effect.value);
                 break;
             // If the player is gaining bombs
             case CardEffectType.GainBomb:
-                GainBomb(effect.value);
+                GameManager.Instance._PlayerManager.GainBomb(effect.value);
                 break;
             // If the player is gaining blanks
             case CardEffectType.GainBlank:
-                GainBlank(effect.value);
+                GameManager.Instance._PlayerManager.GainBlank(effect.value);
                 break;
             // If the player is shooting bullets from new angles
             case CardEffectType.BulletDamage:
