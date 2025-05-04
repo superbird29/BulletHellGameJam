@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5703223572795317429}
   - component: {fileID: 8475833394506646243}
   m_Layer: 0
-  m_Name: MarchingWitchGroup
+  m_Name: MarchingBugGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

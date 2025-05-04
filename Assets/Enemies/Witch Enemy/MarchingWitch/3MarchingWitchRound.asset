@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dee086d911a1ca4aba4113ac107f7e3, type: 3}
   m_Name: 3MarchingWitchRound
   m_EditorClassIdentifier: 
-  waves: []
+  waves:
+  - {fileID: 5703223572795317429, guid: a8e22ad8649b2af479e042273e626617, type: 3}
+  - {fileID: 5703223572795317429, guid: a8e22ad8649b2af479e042273e626617, type: 3}
+  - {fileID: 5703223572795317429, guid: a8e22ad8649b2af479e042273e626617, type: 3}
+  - {fileID: 5703223572795317429, guid: a8e22ad8649b2af479e042273e626617, type: 3}
+  - {fileID: 5703223572795317429, guid: a8e22ad8649b2af479e042273e626617, type: 3}
+  - {fileID: 5703223572795317429, guid: a8e22ad8649b2af479e042273e626617, type: 3}

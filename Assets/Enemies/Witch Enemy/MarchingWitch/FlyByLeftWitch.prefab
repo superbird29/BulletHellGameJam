@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5703223572795317429}
   - component: {fileID: 8475833394506646243}
   m_Layer: 0
-  m_Name: MarchingWitchGroup
+  m_Name: FlyByLeftWitch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 3570695242835275953, guid: eb64ae4193fa98248af4d8ff966b04ea, type: 3}
-  rows: 2
-  columns: 3
+  rows: 1
+  columns: 1
   staggerRows: 0
-  zone: 3
+  zone: 2
 --- !u!61 &8475833394506646243
 BoxCollider2D:
   m_ObjectHideFlags: 0
