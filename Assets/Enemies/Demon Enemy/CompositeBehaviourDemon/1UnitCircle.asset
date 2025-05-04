@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ea7e4cd028ea9e478bdcb813aaf25ae, type: 3}
   m_Name: 1UnitCircle
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 0.05
   useEnemySpeed: 1
-  nextBehaviour: {fileID: 0}
+  nextBehaviour: {fileID: 11400000, guid: 09f4da0210cc54c45a561a81b92aad15, type: 2}
   radius: 1
   numPoints: 30
   loopThroughPoints: 0
-  pathPoints: []
