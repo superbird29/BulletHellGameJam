@@ -90,8 +90,24 @@ PrefabInstance:
       value: Assets/Enemies/EnemyMovementFlow
       objectReference: {fileID: 0}
     - target: {fileID: 5026708999383873254, guid: 49d8ba14805dfb442a395db747796206, type: 3}
+      propertyPath: aimingFolderPath
+      value: Assets/Enemies/Enemy Behaviour Stuff/EnemyAimingFlow
+      objectReference: {fileID: 0}
+    - target: {fileID: 5026708999383873254, guid: 49d8ba14805dfb442a395db747796206, type: 3}
+      propertyPath: firingFolderPath
+      value: Assets/Enemies/Enemy Behaviour Stuff/EnemyFiringFlow
+      objectReference: {fileID: 0}
+    - target: {fileID: 5026708999383873254, guid: 49d8ba14805dfb442a395db747796206, type: 3}
+      propertyPath: movementFolderPath
+      value: Assets/Enemies/Enemy Behaviour Stuff/EnemyMovementFlow
+      objectReference: {fileID: 0}
+    - target: {fileID: 5026708999383873254, guid: 49d8ba14805dfb442a395db747796206, type: 3}
       propertyPath: currentFlowFolderName
       value: MoveFrontLeftAndZigZag
+      objectReference: {fileID: 0}
+    - target: {fileID: 5026708999383873254, guid: 49d8ba14805dfb442a395db747796206, type: 3}
+      propertyPath: compositeStateFolderPath
+      value: Assets/Enemies/Enemy Behaviour Stuff/EnemyCompositeStates
       objectReference: {fileID: 0}
     - target: {fileID: 5026708999383873254, guid: 49d8ba14805dfb442a395db747796206, type: 3}
       propertyPath: movementBehaviours.Array.size
