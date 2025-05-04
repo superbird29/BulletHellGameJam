@@ -14,7 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   useEnemySpeed: 1
-  nextBehaviour: {fileID: 0}
+  nextBehaviour: {fileID: 11400000, guid: fc42deabd96c4354a85778fa166a6056, type: 2}
   usePointsAsVectors: 0
   loopThroughPoints: 0
-  pathPoints: []
+  pathPoints:
+  - {x: -2, y: 1, z: 0}
+  - {x: -2, y: -2, z: 0}
+  - {x: 4, y: -2, z: 0}
+  - {x: 4, y: 1, z: 0}
+  - {x: -2, y: 1, z: 0}

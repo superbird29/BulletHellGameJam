@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6130340b6e513e142a7cb9e880df129c, type: 3}
   m_Name: New Firing State
   m_EditorClassIdentifier: 
-  nextState: {fileID: 0}
+  nextState: {fileID: 11400000, guid: 93641c930a615d74e956bef9917770e3, type: 2}
   firingTime: 100
