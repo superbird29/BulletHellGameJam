@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a26eaff11eb98cb4fad502ffb456443e, type: 3}
-  m_Name: Move in a Box and Fire Towards Player
+  m_Script: {fileID: 11500000, guid: 7125ecefad672aa41af91827ec1dd613, type: 3}
+  m_Name: FireRight
   m_EditorClassIdentifier: 
   nextState: {fileID: 0}
   speed: 0
@@ -22,3 +22,4 @@ MonoBehaviour:
   - {x: 7, y: 4, z: 0}
   - {x: -7, y: 4, z: 0}
   - {x: -7, y: -10, z: 0}
+  direction: 0
