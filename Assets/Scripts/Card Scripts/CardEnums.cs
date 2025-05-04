@@ -27,6 +27,7 @@ namespace CardGame
         Heal,
         TakeDamage,
         GainBomb,
+        GainBlank,
 
         //Projectile
         BulletSize,

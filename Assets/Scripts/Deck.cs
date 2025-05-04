@@ -25,6 +25,8 @@ public class Deck : MonoBehaviour
     [SerializeField] private List<GameObject> prefabedCards = new List<GameObject>();
     // Number of cards the player can have in their hand
     [SerializeField] private int handSize = 4;
+    // For if the player has drawn cards over the handSize
+    private int currentHandSizeThisRound = 4;
     // the starting size or can be the max size of the player deck
     [SerializeField] private int deckSize = 10;
     // The prefab that the card is using for information
@@ -45,6 +47,14 @@ public class Deck : MonoBehaviour
     /// </summary>
     public void GenerateHand()
     {
+        currentHandSizeThisRound = handSize;
+        // Destroying all of the old cards
+        while(prefabedCards.Count > 0)
+        {
+            Destroy(prefabedCards[0]);
+            prefabedCards.RemoveAt(0);
+        }
+
         // If the player has card in hands when a new hand is generated then it empties it
         while(playerHand.Count > 0)
         {
@@ -79,6 +89,8 @@ public class Deck : MonoBehaviour
             Vector3 position = new Vector3(xPosition + i * cardSpacing, 0f, 0f);
             // the card object being instantiated
             GameObject card = Instantiate(cardPrefab, handPosition);
+            // Name for Debugging purposes
+            card.gameObject.name = playerHand[i].cardName + " " + i;
             // the position of the card being adjusted
             card.transform.localPosition = position;
             // Changing the text of the card prefab to reflect what it does
@@ -90,9 +102,9 @@ public class Deck : MonoBehaviour
             // What the button does 1. Executes Card 2. Adds card to discard 3. Removes the card from player's hand 4. destroys the cards
             button.onClick.AddListener(() => 
             {
-                CardEffectParser.Instance.ExecuteCard(currentCard);
                 discard.Add(currentCard);
                 playerHand.Remove(currentCard);
+                CardEffectParser.Instance.ExecuteCard(currentCard);          
                 Destroy(card);
             });
             prefabedCards.Add(card);
@@ -104,7 +116,7 @@ public class Deck : MonoBehaviour
     /// Draws a card to the player's hand
     /// </summary>
     /// <param name="amountOfCards"> The number of cards being drawn </param>
-    public void DrawCard(int amountOfCards)
+    public void DrawCard(int amountOfCards, bool handSizeWasIncreased)
     {
         // Adds cards to the player's hand based on their hand size
         for(int i = 0; i < amountOfCards; i++)
@@ -120,7 +132,6 @@ public class Deck : MonoBehaviour
                 }
                 if(deck.Count == 0)
                 {
-                    Debug.Log("No cards left");
                     break;
                 }
             }
@@ -130,7 +141,17 @@ public class Deck : MonoBehaviour
             deck.RemoveAt(cardPull);
         }
 
-        ReloadCards();
+        // If the hand size was increased the reload cards already reads this
+        if(handSizeWasIncreased)
+        {
+            ReloadCards();
+        }
+        // If the player is just drawing cards but not increasing hand size needs the bonus
+        else
+        {
+            currentHandSizeThisRound += amountOfCards - 1;
+            ReloadCards();
+        }
     }
 
     /// <summary>
@@ -140,7 +161,8 @@ public class Deck : MonoBehaviour
     public void IncreaseHandSize(int amountIncreased)
     {
         handSize += amountIncreased;
-        DrawCard(amountIncreased + 1);
+        currentHandSizeThisRound += amountIncreased;
+        DrawCard(amountIncreased + 1, true);
     }
 
     /// <summary>
@@ -151,18 +173,21 @@ public class Deck : MonoBehaviour
         // Destroying all of the old cards
         while(prefabedCards.Count > 0)
         {
+            //Debug.Log($"Destroying {prefabedCards[0].name}");
             Destroy(prefabedCards[0]);
+            prefabedCards.RemoveAt(0);
         }
-
         // Returns the x position for where the first card should be placed
-        float xPosition = -(handSize - 1) * cardSpacing / 2f;
+        float xPosition = -(currentHandSizeThisRound - 1) * cardSpacing / 2f;
 
-        for(int i = 0; i < handSize; i++)
+        for(int i = 0; i < currentHandSizeThisRound; i++)
         {
             // Getting the position that the card will be shifted
             Vector3 position = new Vector3(xPosition + i * cardSpacing, 0f, 0f);
             // the card object being instantiated
             GameObject card = Instantiate(cardPrefab, handPosition);
+            // Name for debugging purposes
+            card.gameObject.name = playerHand[i].cardName + " " + i;
             // the position of the card being adjusted
             card.transform.localPosition = position;
             // Changing the text of the card prefab to reflect what it does

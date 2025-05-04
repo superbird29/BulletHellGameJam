@@ -55,7 +55,7 @@ public class CardEffectParser : MonoBehaviour
         {
             // If the Player is drawing a card
             case CardEffectType.Draw:
-                GameManager.Instance._DeckManager.DrawCard(effect.value);
+                GameManager.Instance._DeckManager.DrawCard(effect.value, false);
                 break;
             case CardEffectType.HandSizeIncrease:
                 GameManager.Instance._DeckManager.IncreaseHandSize(effect.value);
@@ -67,6 +67,14 @@ public class CardEffectParser : MonoBehaviour
             // If the Player is Gaining shields
             case CardEffectType.GainShield:
                 GameManager.Instance._PlayerManager.ChangeShield(effect.value);
+                break;
+            // If the player is gaining bombs
+            case CardEffectType.GainBomb:
+                GainBomb(effect.value);
+                break;
+            // If the player is gaining blanks
+            case CardEffectType.GainBlank:
+                GainBlank(effect.value);
                 break;
             // If the player is shooting bullets from new angles
             case CardEffectType.BulletDamage:
@@ -93,6 +101,8 @@ public class CardEffectParser : MonoBehaviour
     // These are temporary functions they will be replaced with relavent functions just help with testing
     private void DrawCards(int amount) => Debug.Log($"Draw {amount} cards");
     private void GainShield(int amount) => Debug.Log($"Gain {amount} shields");
+    private void GainBlank(int amount) => Debug.Log($"Gain {amount} of Blanks");
+    private void GainBomb(int amount) => Debug.Log($"Gain {amount} of bombs");
     private void Heal(int amount) => Debug.Log($"Heal {amount} health");
     private void ModifyDamage(int amount) => Debug.Log($"Change bullet damage by {amount} times");
     private void ModifySpeed(int amount) => Debug.Log($"Change bullet speed by {amount} times");
