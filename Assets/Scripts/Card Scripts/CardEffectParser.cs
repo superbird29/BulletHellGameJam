@@ -14,7 +14,6 @@ public class CardEffectParser : MonoBehaviour
 {
     //[SerializeField] private ProjectileModifier projectileModifier;
     //[SerializeField] private PlayerStats playerStats; // Replace with your player/stat handler
-    [SerializeField] public Card[] cards; //Test cards
 
     // Creating an instance for singleton
     public static CardEffectParser Instance { get; private set;}

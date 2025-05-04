@@ -118,6 +118,11 @@ public class Deck : MonoBehaviour
                     deck.Add(discard[discard.Count - 1]);
                     discard.RemoveAt(discard.Count - 1);
                 }
+                if(deck.Count == 0)
+                {
+                    Debug.Log("No cards left");
+                    break;
+                }
             }
             // Pulls a random card from the draw pile and adds it to hand
             int cardPull = Random.Range(0, deck.Count);
@@ -135,7 +140,7 @@ public class Deck : MonoBehaviour
     public void IncreaseHandSize(int amountIncreased)
     {
         handSize += amountIncreased;
-        DrawCard(amountIncreased);
+        DrawCard(amountIncreased + 1);
     }
 
     /// <summary>

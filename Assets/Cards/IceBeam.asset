@@ -15,8 +15,8 @@ MonoBehaviour:
   cardName: Ice Beam Upgrade
   description: Upgrades your gun to an ice beam
   effects:
-  - category: 0
-    effectType: 2
+  - category: 3
+    effectType: 7
     value: 0
     weaponType: 0
     isActive: 1

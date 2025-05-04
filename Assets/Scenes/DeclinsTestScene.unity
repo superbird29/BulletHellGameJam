@@ -782,8 +782,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e5fc8cebe4afcb8419d852f83c1154ad, type: 2}
   - {fileID: 11400000, guid: ed302d1b3807d5345a80fab9ed080413, type: 2}
   - {fileID: 11400000, guid: fba952d6d87bb454c87eceb14430976e, type: 2}
-  - {fileID: 11400000, guid: 8e71227c661253f4892f49845bd451a0, type: 2}
-  - {fileID: 11400000, guid: c7e5b4a6e92a17241b37da5d7ad1d400, type: 2}
+  - {fileID: 11400000, guid: c10d04b8636ac2a49b5b5b4ab1c65d94, type: 2}
   playerHand: []
   deck: []
   discard: []
@@ -805,12 +804,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5131e20220461fa4cba0baa62026b8e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cards:
-  - {fileID: 11400000, guid: ed302d1b3807d5345a80fab9ed080413, type: 2}
-  - {fileID: 11400000, guid: 8e71227c661253f4892f49845bd451a0, type: 2}
-  - {fileID: 11400000, guid: c7e5b4a6e92a17241b37da5d7ad1d400, type: 2}
-  - {fileID: 11400000, guid: e5fc8cebe4afcb8419d852f83c1154ad, type: 2}
-  - {fileID: 11400000, guid: fba952d6d87bb454c87eceb14430976e, type: 2}
 --- !u!4 &1321515063
 Transform:
   m_ObjectHideFlags: 0
