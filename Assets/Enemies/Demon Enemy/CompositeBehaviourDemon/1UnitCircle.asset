@@ -9,19 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51bfc94bb0b64d74ca802b40e84b014f, type: 3}
-  m_Name: FireTowardsCenterBox
+  m_Script: {fileID: 11500000, guid: 5ea7e4cd028ea9e478bdcb813aaf25ae, type: 3}
+  m_Name: 1UnitCircle
   m_EditorClassIdentifier: 
-  nextState: {fileID: 0}
   speed: 0
   useEnemySpeed: 1
-  usePointsAsVectors: 0
+  nextBehaviour: {fileID: 0}
+  radius: 1
+  numPoints: 30
   loopThroughPoints: 0
-  pathPoints:
-  - {x: -7, y: 4, z: 0}
-  - {x: -7, y: -4, z: 0}
-  - {x: 7, y: -4, z: 0}
-  - {x: 7, y: 4, z: 0}
-  - {x: -7, y: 4, z: 0}
-  - {x: -7, y: -10, z: 0}
-  numberOfFiringDirections: 2
+  pathPoints: []
