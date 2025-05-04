@@ -49,20 +49,17 @@ public class EnemyCompositeBehaviourState : EnemyState
     {
         if (startingMovementBehaviour != null)
         {
-            currentMovementBehaviour = startingMovementBehaviour;
-            currentMovementBehaviour.EnterBehaviour(this);
+            NextBehaviour(startingMovementBehaviour);
         }
 
         if (startingFiringBehaviour != null)
         {
-            currentFiringBehaviour = startingFiringBehaviour;
-            currentFiringBehaviour.EnterBehaviour(this);
+            NextBehaviour(startingFiringBehaviour);
         }
 
         if (startingAimingBehaviour != null)
         {
-            currentAimingBehaviour = startingAimingBehaviour;
-            currentAimingBehaviour.EnterBehaviour(this);
+            NextBehaviour(startingAimingBehaviour);
         }
     }
 

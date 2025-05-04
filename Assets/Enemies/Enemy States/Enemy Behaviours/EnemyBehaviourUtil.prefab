@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6217034193391511589
+--- !u!1 &2578544832166186272
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 660266894584043715}
-  - component: {fileID: 6933068325791610635}
+  - component: {fileID: 4561716537643842514}
+  - component: {fileID: 5026708999383873254}
   m_Layer: 0
-  m_Name: LineToVector3Array
+  m_Name: EnemyBehaviourUtil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &660266894584043715
+--- !u!4 &4561716537643842514
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6217034193391511589}
+  m_GameObject: {fileID: 2578544832166186272}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.3774853, y: 0.5483768, z: 0.1788408}
+  m_LocalPosition: {x: 3.076878, y: 5.4645276, z: 0.20928617}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6933068325791610635
+--- !u!114 &5026708999383873254
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6217034193391511589}
+  m_GameObject: {fileID: 2578544832166186272}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0707e06cdea70043a7092e9baa4ee62, type: 3}
+  m_Script: {fileID: 11500000, guid: 07fa0a25fe6b40d4b99bc4e68249cbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vector3s:
-  - {x: 0.9537749, y: 1.7167952, z: -21.468628}
-  - {x: 3.6667352, y: 2.776545, z: -21.468628}
-  - {x: 6.930765, y: 2.522205, z: -21.468628}
-  - {x: 8.0752945, y: -0.233145, z: -21.468628}
-  - {x: 7.6937847, y: -3.581955, z: -21.468628}
-  - {x: 3.751515, y: -4.1754155, z: -21.468628}
-  - {x: 0.8266051, y: -1.9287452, z: -21.468628}
-  - {x: 0.91138506, y: 1.7167952, z: -21.468628}
-  line: {fileID: 0}
