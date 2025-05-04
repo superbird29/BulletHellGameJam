@@ -20,6 +20,8 @@ public class EnemyManager : MonoBehaviour
 
     public List<EnemyStateMachine> currentRoundEnemies;
 
+    public GameObject middleOfPlayArea;
+
     void Start()
     {
         spawnArea = GetComponent<BoxCollider2D>().bounds;

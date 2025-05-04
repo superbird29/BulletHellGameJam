@@ -52,12 +52,15 @@ public class CardEffectDrawer : PropertyDrawer
         {
             var weaponTypeProp = property.FindPropertyRelative("weaponType");
             var isActiveProp = property.FindPropertyRelative("isActive");
+            var weaponObjectProp = property.FindPropertyRelative("weaponObject");
 
             Rect weaponRect = new Rect(position.x, position.y + lineHeight * 2, position.width, lineHeight);
             Rect toggleRect = new Rect(position.x, position.y + lineHeight * 3, position.width, lineHeight);
+            Rect objectRect = new Rect(position.x, position.y + lineHeight * 4, position.width, lineHeight);
 
             EditorGUI.PropertyField(weaponRect, weaponTypeProp);
             EditorGUI.PropertyField(toggleRect, isActiveProp);
+            EditorGUI.PropertyField(objectRect, weaponObjectProp);
         }
         else{
             // Property field for the value of the card
@@ -83,7 +86,7 @@ public class CardEffectDrawer : PropertyDrawer
 
         if(category == CardEffectCategory.Weapon)
         {
-            lines +=1;
+            lines +=2;
         }
 
         return lines * (EditorGUIUtility.singleLineHeight + 2);
@@ -100,13 +103,14 @@ public class CardEffectDrawer : PropertyDrawer
         {
             // If Player was selected get the enums for player based actions
             case CardEffectCategory.Player:
-                return new[] { CardEffectType.Heal, CardEffectType.GainShield, CardEffectType.TakeDamage };
+                return new[] { CardEffectType.Heal, CardEffectType.GainShield, CardEffectType.TakeDamage, CardEffectType.GainBomb };
             // If Projectile was selected get the enums for projectile settings
             case CardEffectCategory.Projectile:
-                return new[] { CardEffectType.ModifyBulletAngle, CardEffectType.ModifyBulletSpeed, CardEffectType.ModifyBulletSize };
+                return new[] { CardEffectType.BulletSize, CardEffectType.BulletDamage, CardEffectType.FasterFirerate };
             // If Card was selected get the enums for Card actions
             case CardEffectCategory.Card:
-                return new[] { CardEffectType.Draw, CardEffectType.Discard};
+                return new[] { CardEffectType.Draw, CardEffectType.Discard, CardEffectType.HandSizeIncrease};
+            // If Weapon was selected get the enums for weapon
             case CardEffectCategory.Weapon:
                 return new[] { CardEffectType.ToggleWeapon};
             default:
