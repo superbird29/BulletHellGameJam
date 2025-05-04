@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dee086d911a1ca4aba4113ac107f7e3, type: 3}
+  m_Name: DemonFlyByWave
+  m_EditorClassIdentifier: 
+  waves:
+  - {fileID: 5703223572795317429, guid: 778358b3f747d914f9e7e1c126e3c07c, type: 3}
+  - {fileID: 5703223572795317429, guid: dde729248dd852e4aa5310d74fc0a81b, type: 3}
+  - {fileID: 5703223572795317429, guid: f4d87c008b8eade42bb58134f27832cc, type: 3}
+  - {fileID: 5703223572795317429, guid: 778358b3f747d914f9e7e1c126e3c07c, type: 3}
+  - {fileID: 5703223572795317429, guid: dde729248dd852e4aa5310d74fc0a81b, type: 3}
+  - {fileID: 5703223572795317429, guid: f4d87c008b8eade42bb58134f27832cc, type: 3}
