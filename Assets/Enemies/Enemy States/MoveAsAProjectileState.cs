@@ -1,13 +1,11 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using ND_VariaBULLET;
 using Unity.VisualScripting;
 using UnityEngine;
 
 [Serializable]
 [CreateAssetMenu(menuName ="Assets/EnemyState/MoveAsAProjectileState")]
-public class MoveAsAProjectileState : MoveState
+public class MoveAsAProjectileState : MoveTowardsPlayerState
 {
     private DamagerBody damagerBody;
 

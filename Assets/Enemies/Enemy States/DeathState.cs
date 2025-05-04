@@ -10,7 +10,8 @@ public class DeathState : EnemyState
     protected override void InnerUpdateState(){}
 
     protected override void InnerEnterState(){
-        enemy.transform.gameObject.SetActive(false);
+        EnemyManager enemyManager = GameManager.Instance._EnemyManager;
+        enemyManager.RemoveEnemyFromList(enemy);
     }
 
     protected override void InnerExitState(){}

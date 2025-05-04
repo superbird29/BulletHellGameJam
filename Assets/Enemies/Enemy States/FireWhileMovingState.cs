@@ -6,13 +6,13 @@ using UnityEngine;
 public class FireWhileMovingState : EnemyState
 {
 
-    private Vector3 startingPosition;
-    public Vector3 distanceToMove = new(0,-50,0);
+    protected Vector3 startingPosition;
+    public Vector3 distanceToMove = new(0,0,0);
     public float speed = 0f;
 
     public bool useEnemySpeed = true;
 
-    private Vector3 destination;
+    protected Vector3 destination;
 
     protected override void InnerEnterState()
     {
