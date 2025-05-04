@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [Serializable]
-[CreateAssetMenu(menuName ="Assets/Enemy/EnemyGroupRound")]
+[CreateAssetMenu(menuName ="Assets/Enemy/EnemyGroupWave")]
 public class EnemyGroupWave : ScriptableObject
 {
     float waitTime;
