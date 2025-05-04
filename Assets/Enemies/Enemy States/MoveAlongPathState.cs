@@ -29,9 +29,6 @@ public class MoveAlongPathState : EnemyState
             Vector3 target = pathPoints[currentPointIndex];
             enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, target, speed);
 
-            Debug.Log(target);
-            Debug.Log(enemy.transform.position);
-
             if (Vector3.Distance(enemy.transform.position, target) < 0.01f)
             {
                 currentPointIndex++;
