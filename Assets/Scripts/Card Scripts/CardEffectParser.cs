@@ -14,7 +14,6 @@ public class CardEffectParser : MonoBehaviour
 {
     //[SerializeField] private ProjectileModifier projectileModifier;
     //[SerializeField] private PlayerStats playerStats; // Replace with your player/stat handler
-    [SerializeField] public Card[] cards; //Test cards
 
     // Creating an instance for singleton
     public static CardEffectParser Instance { get; private set;}
@@ -56,26 +55,37 @@ public class CardEffectParser : MonoBehaviour
         {
             // If the Player is drawing a card
             case CardEffectType.Draw:
-                DrawCards(effect.value);
+                GameManager.Instance._DeckManager.DrawCard(effect.value, false);
+                break;
+            case CardEffectType.HandSizeIncrease:
+                GameManager.Instance._DeckManager.IncreaseHandSize(effect.value);
                 break;
             // If the Player is healing
             case CardEffectType.Heal:
-                Heal(effect.value);
+                GameManager.Instance._PlayerManager.ChangeLife(effect.value);
                 break;
             // If the Player is Gaining shields
             case CardEffectType.GainShield:
-                GainShield(effect.value);
+                GameManager.Instance._PlayerManager.GainShield(effect.value);
+                break;
+            // If the player is gaining bombs
+            case CardEffectType.GainBomb:
+                GameManager.Instance._PlayerManager.GainBomb(effect.value);
+                break;
+            // If the player is gaining blanks
+            case CardEffectType.GainBlank:
+                GameManager.Instance._PlayerManager.GainBlank(effect.value);
                 break;
             // If the player is shooting bullets from new angles
-            case CardEffectType.ModifyBulletAngle:
-                ModifyAngle(effect.value);
+            case CardEffectType.BulletDamage:
+                ModifyDamage(effect.value);
                 break;
             // If the player is shooting bullets faster
-            case CardEffectType.ModifyBulletSpeed:
+            case CardEffectType.FasterFirerate:
                 ModifySpeed(effect.value);
                 break;
             // If the player is shooting bigger or smaller bullets
-            case CardEffectType.ModifyBulletSize:
+            case CardEffectType.BulletSize:
                 ModifySize(effect.value);
                 break;
             case CardEffectType.ToggleWeapon:
@@ -91,8 +101,10 @@ public class CardEffectParser : MonoBehaviour
     // These are temporary functions they will be replaced with relavent functions just help with testing
     private void DrawCards(int amount) => Debug.Log($"Draw {amount} cards");
     private void GainShield(int amount) => Debug.Log($"Gain {amount} shields");
+    private void GainBlank(int amount) => Debug.Log($"Gain {amount} of Blanks");
+    private void GainBomb(int amount) => Debug.Log($"Gain {amount} of bombs");
     private void Heal(int amount) => Debug.Log($"Heal {amount} health");
-    private void ModifyAngle(int amount) => Debug.Log($"Change bullet angle by {amount} degrees");
+    private void ModifyDamage(int amount) => Debug.Log($"Change bullet damage by {amount} times");
     private void ModifySpeed(int amount) => Debug.Log($"Change bullet speed by {amount} times");
     private void ModifySize(int amount) => Debug.Log($"Change bullet size by {amount} times");
     private void ToggleWeapon(string name, bool isActive) => Debug.Log($"Your weapon changed to {name} and it is set to {isActive}");

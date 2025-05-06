@@ -16,7 +16,8 @@ MonoBehaviour:
   description: Double the size of your bullets
   effects:
   - category: 1
-    effectType: 5
+    effectType: 4
     value: 2
     weaponType: 0
     isActive: 0
+    weaponObject: {fileID: 0}

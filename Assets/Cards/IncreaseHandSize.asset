@@ -10,18 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92b25ea7bf7f0af4a880dcac4ace293f, type: 3}
-  m_Name: ShieldSpilt
+  m_Name: IncreaseHandSize
   m_EditorClassIdentifier: 
-  cardName: Shielded Spilt
-  description: Gain 1 shield and gain bullets shooting at 45 degrees
+  cardName: Increase Hand Size
+  description: Increases your hand size by 1, and draw a new card to replace
   effects:
-  - category: 0
-    effectType: 0
+  - category: 2
+    effectType: 10
     value: 1
     weaponType: 0
     isActive: 0
-  - category: 1
-    effectType: 3
-    value: 45
-    weaponType: 0
-    isActive: 0
+    weaponObject: {fileID: 0}

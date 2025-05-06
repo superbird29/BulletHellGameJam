@@ -28,6 +28,10 @@ namespace ND_VariaBULLET
         [Tooltip("Sets the duration frames for the DamageFlicker effect upon collision.")]
         public int FlickerDuration = 6;
 
+        [Range(0, 100)]
+        [Tooltip("Sets the pause time between flickers upon collision.")]
+        public int FlickerPause = 3;
+
         [Tooltip("Sets the color the object flickers to when HP is reducing and DamageFlicker is enabled.")]
         public Color DamageColor;
         private Color NormalColor;
@@ -91,7 +95,7 @@ namespace ND_VariaBULLET
                 bool flicker = false;
                 for (int i = 0; i < FlickerDuration * 2; i++)
                 {
-                    flicker = !flicker;
+                    if (i % (FlickerPause + 1) == 0) flicker = !flicker;
 
                     if (flicker)
                         rend.color = DamageColor;
