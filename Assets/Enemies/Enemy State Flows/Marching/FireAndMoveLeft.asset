@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee02c10f989eb7f4f8d4f83bbe292664, type: 3}
   m_Name: FireAndMoveLeft
   m_EditorClassIdentifier: 
-  nextState: {fileID: 11400000, guid: 2302d2b2fe473ae47862e6f0b83a8898, type: 2}
-  distanceToMove: {x: 1, y: 0, z: 0}
+  nextState: {fileID: 11400000, guid: 2ed461a9fdf13bb40b7fa34aa59f989a, type: 2}
+  distanceToMove: {x: -0.2, y: 0, z: 0}
   speed: 0
   useEnemySpeed: 1
