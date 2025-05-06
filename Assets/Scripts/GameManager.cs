@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public PlayerManager _PlayerManager;
     public RoundManager _RoundManager;
 
+    // This is reference to the Deck script it holds information for the player hand and deck
+    public Deck _DeckManager;
     public EnemyManager _EnemyManager;
 
 
