@@ -14,7 +14,7 @@ public class RoundManager : MonoBehaviour
 
     //Round Info
     [SerializeField] GameObject cardTimeObj;
-    [SerializeField] float cardTimer = 15f;
+    [SerializeField] float cardTimer = 10f;
     [SerializeField] bool DrawCards = false;
 
 
@@ -43,7 +43,9 @@ public class RoundManager : MonoBehaviour
         }
         if(DrawCards == true)
         {
-
+            DrawCards = false;
+            GameManager.Instance._DeckManager.GenerateHand();
+            SetRoundTime(cardTimer);
         }
     }
 

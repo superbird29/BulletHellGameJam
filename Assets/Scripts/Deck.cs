@@ -92,7 +92,6 @@ public class Deck : MonoBehaviour
             print((i + 1 )% 2);
             if (i%2 == 0 && i != 0)
             {
-                print("im in");
                 currentHeightSpacing = 1 * heightSpacing;
                 newRow = i;
             }
@@ -119,7 +118,8 @@ public class Deck : MonoBehaviour
             });
             prefabedCards.Add(card);
         }
-
+        currentHeightSpacing = 0; // reset my jank
+        newRow = 0;
     }
 
     /// <summary>

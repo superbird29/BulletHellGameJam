@@ -122,6 +122,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &124653703 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8869872163532609477, guid: 88fd62669f5d4f04ab5b86107423b5df, type: 3}
+  m_PrefabInstance: {fileID: 8671892706675368609}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &164921981 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1508191714778943974, guid: 88fd62669f5d4f04ab5b86107423b5df, type: 3}
@@ -1367,6 +1372,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 406.3
       objectReference: {fileID: 0}
+    - target: {fileID: 8299129406864755069, guid: 88fd62669f5d4f04ab5b86107423b5df, type: 3}
+      propertyPath: DrawCards
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299129406864755069, guid: 88fd62669f5d4f04ab5b86107423b5df, type: 3}
+      propertyPath: cardTimer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299129406864755069, guid: 88fd62669f5d4f04ab5b86107423b5df, type: 3}
+      propertyPath: cardTimeObj
+      value: 
+      objectReference: {fileID: 124653703}
     - target: {fileID: 8323405829386882110, guid: 88fd62669f5d4f04ab5b86107423b5df, type: 3}
       propertyPath: m_SizeDelta.x
       value: 200
