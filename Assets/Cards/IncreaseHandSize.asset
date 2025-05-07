@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IncreaseHandSize
   m_EditorClassIdentifier: 
   cardName: Increase Hand Size
-  description: Increases your hand size by 1, and draw a new card to replace
+  description: 'Increases hand size by 1 and draw a card '
   effects:
   - category: 2
     effectType: 10

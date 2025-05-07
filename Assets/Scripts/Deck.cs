@@ -32,7 +32,10 @@ public class Deck : MonoBehaviour
     // The prefab that the card is using for information
     [SerializeField] private GameObject cardPrefab;
     // The spacing between cards in your hand (visual)
-    [SerializeField] private float cardSpacing = 150f;
+    [SerializeField] private float cardSpacing = 50f;
+    [SerializeField] float heightSpacing = 250f;
+    [SerializeField] float currentHeightSpacing = 0f;
+    [SerializeField] int newRow = 0;
     // Where in the 2d space the hand is located for cards
     [SerializeField] private Transform handPosition;
 
@@ -81,12 +84,18 @@ public class Deck : MonoBehaviour
         }
 
         // Returns the x position for where the first card should be placed
-        float xPosition = -(handSize - 1) * cardSpacing / 2f;
+        //float xPosition = cardSpacing / 2f; //-(handSize - 1)
 
-        for(int i = 0; i < handSize; i++)
+        for (int i = 0; i < handSize; i++)
         {
             // Getting the position that the card will be shifted
-            Vector3 position = new Vector3(xPosition + i * cardSpacing, 0f, 0f);
+            print((i + 1 )% 2);
+            if (i%2 == 0 && i != 0)
+            {
+                currentHeightSpacing = 1 * heightSpacing;
+                newRow = i;
+            }
+            Vector3 position = new Vector3((i - newRow )* cardSpacing, currentHeightSpacing, 0f); //xPosition + 
             // the card object being instantiated
             GameObject card = Instantiate(cardPrefab, handPosition);
             // Name for Debugging purposes
@@ -109,7 +118,8 @@ public class Deck : MonoBehaviour
             });
             prefabedCards.Add(card);
         }
-
+        currentHeightSpacing = 0; // reset my jank
+        newRow = 0;
     }
 
     /// <summary>
