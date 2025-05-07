@@ -13,14 +13,14 @@ public class RoundManager : MonoBehaviour
     [SerializeField] float pointsDelay = .1f;
 
     //Round Info
-    [SerializeField] GameObject RoundTimeObj;
-    [SerializeField] float roundTimer = 15f;
-    [SerializeField] bool RoundEnd = false;
+    [SerializeField] GameObject cardTimeObj;
+    [SerializeField] float cardTimer = 15f;
+    [SerializeField] bool DrawCards = false;
 
 
     public void SetRoundTime(float time)
     {
-        roundTimer = time;
+        cardTimer = time;
     }
     public void AdPoints(int point)
     {
@@ -36,10 +36,14 @@ public class RoundManager : MonoBehaviour
     private void Update()
     {
         pointsObj.GetComponent<TMP_Text>().text = "Points: "+ points.ToString();
-        RoundTimeObj.GetComponent<TMP_Text>().text = "Time Remaining: " + roundTimer.ToString("f2");
-        if(roundTimer <= 0)
+        cardTimeObj.GetComponent<TMP_Text>().text = "Card Duration: " + cardTimer.ToString("f2");
+        if(cardTimer <= 0)
         {
-            RoundEnd = true;
+            DrawCards = true;
+        }
+        if(DrawCards == true)
+        {
+
         }
     }
 
@@ -55,7 +59,7 @@ public class RoundManager : MonoBehaviour
     IEnumerator RoundTime()
     {
         yield return new WaitForSeconds(.02f);
-        roundTimer -= .02f;
+        cardTimer -= .02f;
         StartCoroutine(RoundTime());
     }
 
