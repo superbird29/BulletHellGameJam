@@ -16,7 +16,7 @@ MonoBehaviour:
   description: 'Increases hand size by 1 and draw a card '
   effects:
   - category: 2
-    effectType: 10
+    effectType: 11
     value: 1
     weaponType: 0
     isActive: 0
