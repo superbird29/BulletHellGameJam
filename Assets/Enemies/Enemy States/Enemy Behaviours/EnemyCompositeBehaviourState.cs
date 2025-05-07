@@ -7,11 +7,11 @@ using UnityEngine;
 public class EnemyCompositeBehaviourState : EnemyState
 {
 
-    [SerializeField] BaseMovementBehaviour startingMovementBehaviour;
+    [SerializeField] public BaseMovementBehaviour startingMovementBehaviour;
 
-    [SerializeField] BaseFiringBehaviour startingFiringBehaviour;
+    [SerializeField] public BaseFiringBehaviour startingFiringBehaviour;
 
-    [SerializeField] BaseAimingBehaviour startingAimingBehaviour;
+    [SerializeField] public BaseAimingBehaviour startingAimingBehaviour;
 
     protected BaseMovementBehaviour currentMovementBehaviour;
 
@@ -49,20 +49,17 @@ public class EnemyCompositeBehaviourState : EnemyState
     {
         if (startingMovementBehaviour != null)
         {
-            currentMovementBehaviour = startingMovementBehaviour;
-            currentMovementBehaviour.EnterBehaviour(this);
+            NextBehaviour(startingMovementBehaviour);
         }
 
         if (startingFiringBehaviour != null)
         {
-            currentFiringBehaviour = startingFiringBehaviour;
-            currentFiringBehaviour.EnterBehaviour(this);
+            NextBehaviour(startingFiringBehaviour);
         }
 
         if (startingAimingBehaviour != null)
         {
-            currentAimingBehaviour = startingAimingBehaviour;
-            currentAimingBehaviour.EnterBehaviour(this);
+            NextBehaviour(startingAimingBehaviour);
         }
     }
 
