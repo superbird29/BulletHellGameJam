@@ -27,6 +27,8 @@ public class Deck : MonoBehaviour
     [SerializeField] private int handSize = 4;
     // For if the player has drawn cards over the handSize
     [SerializeField] private int currentHandSizeThisRound = 4;
+    // The max that the player's hand size go to through upgrades
+    [SerializeField] private int maxHandSize = 10;
     // the starting size or can be the max size of the player deck
     [SerializeField] private int deckSize = 10;
     // The prefab that the card is using for information
@@ -163,9 +165,28 @@ public class Deck : MonoBehaviour
     /// <param name="amountIncreased"> The number of cards increased </param>
     public void IncreaseHandSize(int amountIncreased)
     {
-        handSize += amountIncreased;
-        currentHandSizeThisRound += amountIncreased + 1;
-        DrawCard(amountIncreased + 1, true);
+        if(handSize + amountIncreased >= maxHandSize)
+        {
+            handSize = maxHandSize;
+            int drawAmount = 0;
+            if(currentHandSizeThisRound + amountIncreased + 1 > maxHandSize)
+            {
+                drawAmount = currentHandSizeThisRound + amountIncreased + 1 - maxHandSize;
+                currentHandSizeThisRound = maxHandSize;
+                DrawCard(drawAmount, true);
+            }
+            else
+            {
+                currentHandSizeThisRound += amountIncreased + 1;
+                DrawCard(amountIncreased + 1, true);
+            }
+        }
+        else
+        {
+            handSize += amountIncreased;
+            currentHandSizeThisRound += amountIncreased + 1;
+            DrawCard(amountIncreased + 1, true);
+        }
     }
 
     /// <summary>
