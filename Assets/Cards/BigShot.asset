@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92b25ea7bf7f0af4a880dcac4ace293f, type: 3}
-  m_Name: HealCard
+  m_Name: BigShot
   m_EditorClassIdentifier: 
-  cardName: Heal 1 Heart
-  description: You heal 1 heart
+  cardName: Big Shot
+  description: Double the size of your bullets
   effects:
-  - category: 0
-    effectType: 1
-    value: 1
+  - category: 1
+    effectType: 5
+    value: 2
     weaponType: 0
     isActive: 0
     weaponObject: {fileID: 0}
