@@ -26,7 +26,9 @@ public class Deck : MonoBehaviour
     // Number of cards the player can have in their hand
     [SerializeField] private int handSize = 4;
     // For if the player has drawn cards over the handSize
-    private int currentHandSizeThisRound = 4;
+    [SerializeField] private int currentHandSizeThisRound = 4;
+    // The max that the player's hand size go to through upgrades
+    [SerializeField] private int maxHandSize = 10;
     // the starting size or can be the max size of the player deck
     [SerializeField] private int deckSize = 10;
     // The prefab that the card is using for information
@@ -112,8 +114,11 @@ public class Deck : MonoBehaviour
             button.onClick.AddListener(() => 
             {
                 discard.Add(currentCard);
-                playerHand.Remove(currentCard);
-                CardEffectParser.Instance.ExecuteCard(currentCard);          
+                playerHand.Remove(currentCard);               
+                currentHandSizeThisRound--;
+                ReloadCards();
+                prefabedCards.Remove(card);
+                CardEffectParser.Instance.ExecuteCard(currentCard);   
                 Destroy(card);
             });
             prefabedCards.Add(card);
@@ -159,7 +164,7 @@ public class Deck : MonoBehaviour
         // If the player is just drawing cards but not increasing hand size needs the bonus
         else
         {
-            currentHandSizeThisRound += amountOfCards - 1;
+            currentHandSizeThisRound += amountOfCards;
             ReloadCards();
         }
     }
@@ -170,9 +175,28 @@ public class Deck : MonoBehaviour
     /// <param name="amountIncreased"> The number of cards increased </param>
     public void IncreaseHandSize(int amountIncreased)
     {
-        handSize += amountIncreased;
-        currentHandSizeThisRound += amountIncreased;
-        DrawCard(amountIncreased + 1, true);
+        if(handSize + amountIncreased >= maxHandSize)
+        {
+            handSize = maxHandSize;
+            int drawAmount = 0;
+            if(currentHandSizeThisRound + amountIncreased + 1 > maxHandSize)
+            {
+                drawAmount = currentHandSizeThisRound + amountIncreased + 1 - maxHandSize;
+                currentHandSizeThisRound = maxHandSize;
+                DrawCard(drawAmount, true);
+            }
+            else
+            {
+                currentHandSizeThisRound += amountIncreased + 1;
+                DrawCard(amountIncreased + 1, true);
+            }
+        }
+        else
+        {
+            handSize += amountIncreased;
+            currentHandSizeThisRound += amountIncreased + 1;
+            DrawCard(amountIncreased + 1, true);
+        }
     }
 
     /// <summary>
@@ -187,8 +211,9 @@ public class Deck : MonoBehaviour
             Destroy(prefabedCards[0]);
             prefabedCards.RemoveAt(0);
         }
+        int xStartPoint = currentHandSizeThisRound - 1;
         // Returns the x position for where the first card should be placed
-        float xPosition = -(currentHandSizeThisRound - 1) * cardSpacing / 2f;
+        float xPosition = -xStartPoint * cardSpacing / 2f;
 
         for(int i = 0; i < currentHandSizeThisRound; i++)
         {
@@ -209,9 +234,12 @@ public class Deck : MonoBehaviour
             // What the button does 1. Executes Card 2. Adds card to discard 3. Removes the card from player's hand 4. destroys the cards
             button.onClick.AddListener(() => 
             {
-                CardEffectParser.Instance.ExecuteCard(currentCard);
                 discard.Add(currentCard);
                 playerHand.Remove(currentCard);
+                currentHandSizeThisRound--;
+                prefabedCards.Remove(card);
+                ReloadCards();
+                CardEffectParser.Instance.ExecuteCard(currentCard);
                 Destroy(card);
             });
             prefabedCards.Add(card);
