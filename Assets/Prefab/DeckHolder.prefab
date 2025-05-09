@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3544032075167030560
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3682733650759310082}
+  - component: {fileID: 718686281060947871}
+  - component: {fileID: 681547200242034550}
+  m_Layer: 0
+  m_Name: DeckHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3682733650759310082
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3544032075167030560}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &718686281060947871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3544032075167030560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5131e20220461fa4cba0baa62026b8e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &681547200242034550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3544032075167030560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd9e496a7d247264e8bb2284f8d0a06d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardPool:
+  - {fileID: 11400000, guid: 1fe4c2fdef33cae4f83939f3d201f5a3, type: 2}
+  - {fileID: 11400000, guid: c10d04b8636ac2a49b5b5b4ab1c65d94, type: 2}
+  - {fileID: 11400000, guid: c7d25ead815cd854db23539268511a8c, type: 2}
+  - {fileID: 11400000, guid: f28917f44e64902449822c8375a6a117, type: 2}
+  - {fileID: 11400000, guid: ed302d1b3807d5345a80fab9ed080413, type: 2}
+  - {fileID: 11400000, guid: 6b11b6cb53566354cbf4629b1172a25e, type: 2}
+  playerHand: []
+  deck: []
+  discard: []
+  prefabedCards: []
+  handSize: 4
+  deckSize: 10
+  cardPrefab: {fileID: 3654833598947072633, guid: fe74f65ffcb0a264bb012098cc3741fa, type: 3}
+  cardSpacing: 400
+  handPosition: {fileID: 0}

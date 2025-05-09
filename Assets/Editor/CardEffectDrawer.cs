@@ -103,7 +103,7 @@ public class CardEffectDrawer : PropertyDrawer
         {
             // If Player was selected get the enums for player based actions
             case CardEffectCategory.Player:
-                return new[] { CardEffectType.Heal, CardEffectType.GainShield, CardEffectType.TakeDamage, CardEffectType.GainBomb };
+                return new[] { CardEffectType.Heal, CardEffectType.GainShield, CardEffectType.TakeDamage, CardEffectType.GainBomb, CardEffectType.GainBlank};
             // If Projectile was selected get the enums for projectile settings
             case CardEffectCategory.Projectile:
                 return new[] { CardEffectType.BulletSize, CardEffectType.BulletDamage, CardEffectType.FasterFirerate };
