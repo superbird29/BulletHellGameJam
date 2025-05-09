@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b25ea7bf7f0af4a880dcac4ace293f, type: 3}
   m_Name: Draw2Cards
   m_EditorClassIdentifier: 
-  cardName: 
-  description: 
-  effects: []
+  cardName: Draw 2 Cards
+  description: Immediately draw 2 new cards
+  effects:
+  - category: 2
+    effectType: 9
+    value: 2
+    weaponType: 0
+    isActive: 0
+    weaponObject: {fileID: 0}

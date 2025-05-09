@@ -16,7 +16,7 @@ MonoBehaviour:
   description: Upgrades your gun to an ice beam
   effects:
   - category: 3
-    effectType: 7
+    effectType: 8
     value: 0
     weaponType: 0
     isActive: 1
