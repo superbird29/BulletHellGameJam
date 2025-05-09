@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b25ea7bf7f0af4a880dcac4ace293f, type: 3}
   m_Name: GainBomb
   m_EditorClassIdentifier: 
-  cardName: 
-  description: 
-  effects: []
+  cardName: Gain a Bomb
+  description: You gain 1 bomb
+  effects:
+  - category: 0
+    effectType: 3
+    value: 1
+    weaponType: 0
+    isActive: 0
+    weaponObject: {fileID: 0}
