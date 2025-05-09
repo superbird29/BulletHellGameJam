@@ -240,6 +240,14 @@ PrefabInstance:
       propertyPath: heightSpacing
       value: -260
       objectReference: {fileID: 0}
+    - target: {fileID: 1615657797992169555, guid: be19bf77258d4c74bb7d6ac0cd4af6ad, type: 3}
+      propertyPath: cardPool.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615657797992169555, guid: be19bf77258d4c74bb7d6ac0cd4af6ad, type: 3}
+      propertyPath: cardPool.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 52c13cee9605d714fbf870952c0eaff3, type: 2}
     - target: {fileID: 5830944028687099637, guid: be19bf77258d4c74bb7d6ac0cd4af6ad, type: 3}
       propertyPath: m_Name
       value: CardScript

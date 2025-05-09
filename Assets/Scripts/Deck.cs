@@ -91,13 +91,12 @@ public class Deck : MonoBehaviour
         for (int i = 0; i < handSize; i++)
         {
             // Getting the position that the card will be shifted
-            print((i + 1 )% 2);
             if (i%2 == 0 && i != 0)
             {
                 currentHeightSpacing = 1 * heightSpacing;
                 newRow = i;
             }
-            Vector3 position = new Vector3((i - newRow )* cardSpacing, currentHeightSpacing, 0f); //xPosition + 
+            Vector3 position = new Vector3((i - newRow) * cardSpacing, currentHeightSpacing, 0f); //xPosition + 
             // the card object being instantiated
             GameObject card = Instantiate(cardPrefab, handPosition);
             // Name for Debugging purposes

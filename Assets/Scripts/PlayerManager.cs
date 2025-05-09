@@ -75,7 +75,7 @@ public class PlayerManager : MonoBehaviour
         Shield += shield;
         for(int i = 0; i < shield; i++)
         {
-            //ShieldOBJList.Add(Instantiate(ShieldOBJ, ShieldSpawnLoc.transform + Vector3()));
+            ShieldOBJList.Add(Instantiate(ShieldOBJ, ShieldSpawnLoc.transform + Vector3()));
         }
     }
 
