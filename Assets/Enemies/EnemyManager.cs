@@ -60,7 +60,8 @@ public class EnemyManager : MonoBehaviour
             }
             else if (roundCount < rounds.Count)
             {
-                StartNextRound(30f);
+                GameManager.Instance._RoundManager.EndRoundRewards();
+                StartNextRound(GameManager.Instance._RoundManager.roundDuration);
             }
             else if (levelCount < levels.Count)
             {
@@ -103,7 +104,7 @@ public class EnemyManager : MonoBehaviour
         currentWaveCount = 0;
         levelCount++;
 
-        StartNextRound(30f);
+        StartNextRound(GameManager.Instance._RoundManager.roundDuration);
         inbetweenLevels = false;
     }
 

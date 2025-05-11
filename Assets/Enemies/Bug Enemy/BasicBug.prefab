@@ -533,7 +533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathState: {fileID: 11400000, guid: 4454b0719fb265f449f91458063508f4, type: 2}
-  startingState: {fileID: 11400000, guid: 2ed461a9fdf13bb40b7fa34aa59f989a, type: 2}
+  startingState: {fileID: 0}
   enemySpeed: 0.05
   controller: {fileID: 0}
   gameManager: {fileID: 0}
