@@ -96,10 +96,8 @@ public class PlayerManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("mop");
         if (collision.tag == "Bullet" && CanDamage)
         {
-            print("mep");
             ChangeLife(-1);
             //triggure flash and inv
             StartCoroutine(Invincibility());
