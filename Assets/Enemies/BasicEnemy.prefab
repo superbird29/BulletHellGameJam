@@ -334,6 +334,7 @@ MonoBehaviour:
   FinalExplodeFactor: 2
   DamageFlicker: 1
   FlickerDuration: 6
+  FlickerPause: 3
   DamageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &4745616356774756349
 BoxCollider2D:
@@ -402,7 +403,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

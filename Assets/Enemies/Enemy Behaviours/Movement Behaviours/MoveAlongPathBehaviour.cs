@@ -61,7 +61,7 @@ public class MoveAlongPathBehaviour : BaseMovementBehaviour
         return !loopThroughPoints && currentPointIndex >= pathPoints.Count;
     }
 
-    private void UsePathDistances()
+    protected virtual void UsePathDistances()
     {
         if (Vector3.Distance(enemy.transform.position, destination) < 0.01f)
         {
@@ -72,7 +72,7 @@ public class MoveAlongPathBehaviour : BaseMovementBehaviour
         }
     }
 
-    private void UsePathPoints()
+    protected virtual void UsePathPoints()
     {
         if (currentPointIndex < pathPoints.Count)
         {
