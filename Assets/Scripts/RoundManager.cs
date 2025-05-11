@@ -15,6 +15,8 @@ public class RoundManager : MonoBehaviour
     //Round Info
     [SerializeField] GameObject cardTimeObj;
     [SerializeField] float cardTimer = 10f;
+    // How long the current round will last
+    [SerializeField] float roundDuration = 10f;
     [SerializeField] bool DrawCards = false;
 
 
@@ -45,7 +47,7 @@ public class RoundManager : MonoBehaviour
         {
             DrawCards = false;
             GameManager.Instance._DeckManager.GenerateHand();
-            SetRoundTime(cardTimer);
+            SetRoundTime(roundDuration);
         }
     }
 

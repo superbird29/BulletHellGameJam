@@ -111,16 +111,16 @@ public class Deck : MonoBehaviour
             Button button = card.GetComponent<Button>();
             Card currentCard = playerHand[i];
             // What the button does 1. Executes Card 2. Adds card to discard 3. Removes the card from player's hand 4. destroys the cards
-            button.onClick.AddListener(() => 
+            /*button.onClick.AddListener(() => 
             {
                 discard.Add(currentCard);
                 playerHand.Remove(currentCard);               
                 currentHandSizeThisRound--;
                 ReloadCards();
-                prefabedCards.Remove(card);
                 CardEffectParser.Instance.ExecuteCard(currentCard);   
                 Destroy(card);
-            });
+            });*/
+            CardEffectParser.Instance.ExecuteCard(currentCard);   
             prefabedCards.Add(card);
         }
         currentHeightSpacing = 0; // reset my jank

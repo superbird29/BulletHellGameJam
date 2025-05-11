@@ -60,16 +60,20 @@ MonoBehaviour:
   cardPool:
   - {fileID: 11400000, guid: 1fe4c2fdef33cae4f83939f3d201f5a3, type: 2}
   - {fileID: 11400000, guid: c10d04b8636ac2a49b5b5b4ab1c65d94, type: 2}
-  - {fileID: 11400000, guid: c7d25ead815cd854db23539268511a8c, type: 2}
-  - {fileID: 11400000, guid: f28917f44e64902449822c8375a6a117, type: 2}
+  - {fileID: 11400000, guid: 8bba417267c0fe44cb5b212eb69dc1aa, type: 2}
+  - {fileID: 11400000, guid: e8fedcdda9bdbfd4c8ede5560363db0b, type: 2}
   - {fileID: 11400000, guid: ed302d1b3807d5345a80fab9ed080413, type: 2}
-  - {fileID: 11400000, guid: 6b11b6cb53566354cbf4629b1172a25e, type: 2}
   playerHand: []
   deck: []
   discard: []
   prefabedCards: []
   handSize: 4
+  currentHandSizeThisRound: 4
+  maxHandSize: 10
   deckSize: 10
   cardPrefab: {fileID: 3654833598947072633, guid: fe74f65ffcb0a264bb012098cc3741fa, type: 3}
   cardSpacing: 400
+  heightSpacing: 250
+  currentHeightSpacing: 0
+  newRow: 0
   handPosition: {fileID: 0}
