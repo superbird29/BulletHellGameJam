@@ -46,3 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _PlayerManager: {fileID: 0}
   _RoundManager: {fileID: 0}
+  _DeckManager: {fileID: 0}
+  _EnemyManager: {fileID: 0}

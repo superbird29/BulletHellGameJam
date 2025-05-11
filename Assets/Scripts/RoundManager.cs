@@ -18,6 +18,8 @@ public class RoundManager : MonoBehaviour
     // How long the current round will last
     [SerializeField] float roundDuration = 10f;
     [SerializeField] bool DrawCards = false;
+    [SerializeField] public GameObject LoseScreen;
+
 
 
     public void SetRoundTime(float time)
@@ -29,10 +31,25 @@ public class RoundManager : MonoBehaviour
         points += point * pointsBouns;
     }
 
+    //give it the level name 
+    public void ChangeScenes(string level)
+    {
+        GameManager.Instance.SwitchLevel(level);
+    }
+
     private void Start()
     {
         StartCoroutine(PointCount());
         StartCoroutine(RoundTime());
+    }
+
+    public void EndRoundRewards()
+    {
+        Time.timeScale = 0;
+        //activate upgrade screen
+        //Generate Upgrade Screen
+        //Have player chose upgrades
+        //close Upgrades
     }
 
     private void Update()
