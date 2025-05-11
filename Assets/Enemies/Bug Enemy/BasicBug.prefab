@@ -446,6 +446,7 @@ MonoBehaviour:
   FinalExplodeFactor: 2
   DamageFlicker: 1
   FlickerDuration: 6
+  FlickerPause: 3
   DamageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &4745616356774756349
 BoxCollider2D:
@@ -490,7 +491,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4, y: 1}
+  m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
 --- !u!50 &6990688292662450037
 Rigidbody2D:
@@ -660,8 +661,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -520023571
-  m_SortingLayer: 3
+  m_SortingLayerID: 950124507
+  m_SortingLayer: 4
   m_SortingOrder: 10009
   m_Sprite: {fileID: 21300000, guid: 0028a729cfda88245aba79c93755b4e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

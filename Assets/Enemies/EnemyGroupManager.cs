@@ -12,6 +12,8 @@ public class EnemyGroupManager : MonoBehaviour
     
     [SerializeField] bool staggerRows;
 
+    public bool waveActive = false;
+
     [SerializeField] SpawnZone zone;
 
     private Bounds spawnArea;
