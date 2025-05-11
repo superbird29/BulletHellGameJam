@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -28,6 +29,12 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] Rigidbody2D Rigidbody;
     [SerializeField] bool CanDamage = true;
 
+    //bullet stuff
+    [SerializeField] List<GameObject> FireBallEmitterList;
+    [SerializeField] List<GameObject> LightingEmitterList;
+    [SerializeField] List<GameObject> IceBallEmitterList;
+
+
     // Update is called once per frame
     void Update()
     {
@@ -35,7 +42,8 @@ public class PlayerManager : MonoBehaviour
         MovementVertical = Input.GetAxis("Vertical");
         if(HP <= 0)
         {
-            //lose
+            GameManager.Instance._RoundManager.LoseScreen.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
@@ -44,30 +52,62 @@ public class PlayerManager : MonoBehaviour
         //set homing true
     }
 
-    public void ChangeLife(int life)
+    //used for healing life
+    public void ChangeHP(int life)
     {
-        if(HP == 3 && life > 0)
+        //changes add life
+        HP += life;
+        if (HP <= 3)
+            HPObj[HP].GetComponent<Image>().sprite = fullHPOBJ;
+        if(HP < 3)
         {
-            Shield += life;
-            //Destroy(ShieldOBJList[ShieldOBJList.Count]);
-            //ShieldOBJList.RemoveAt(ShieldOBJList.Count);
-            return;
+            HP = 3; //this is bad code move along
+        }
+    }
+
+    //Damage Only
+    public void DamagePlayer(int damage)
+    {
+        // Check for shield, Then if there are shields remove them
+        // then if no shields 
+        if (Shield > 0)
+        {
+            //removes the end shield
+            Shield += damage;
+            print(ShieldOBJList.Count);
+            Destroy(ShieldOBJList[ShieldOBJList.Count-1]);
+            ShieldOBJList.RemoveAt(ShieldOBJList.Count-1);
+            //return;
         }
         else
         {
-            HP += life;
-        }
-        if(life < 0)
-        {
-            if(HP >= 0)
-                HPObj[HP].GetComponent<Image>().sprite = emptyHPOBJ;
+            HP += damage;
+            HPObj[HP-1].GetComponent<Image>().sprite = emptyHPOBJ;
         }
 
-        if(life > 0)
-        {
-            if (HP <= 3)
-                HPObj[HP].GetComponent<Image>().sprite = fullHPOBJ;
-        }
+
+        //if(HP == 3 && life > 0)
+        //{
+        //    Shield += life;
+        //    //Destroy(ShieldOBJList[ShieldOBJList.Count]);
+        //    //ShieldOBJList.RemoveAt(ShieldOBJList.Count);
+        //    return;
+        //}
+        //else
+        //{
+        //    HP += life;
+        //}
+        //if(life < 0)
+        //{
+        //    if(HP >= 0)
+        //        HPObj[HP].GetComponent<Image>().sprite = emptyHPOBJ;
+        //}
+
+        //if(life > 0)
+        //{
+        //    if (HP <= 3)
+        //        HPObj[HP].GetComponent<Image>().sprite = fullHPOBJ;
+        //}
     }
 
     public void GainShield(int shield)
@@ -75,7 +115,7 @@ public class PlayerManager : MonoBehaviour
         Shield += shield;
         for(int i = 0; i < shield; i++)
         {
-            ShieldOBJList.Add(Instantiate(ShieldOBJ, ShieldSpawnLoc.transform + Vector3()));
+            ShieldOBJList.Add(Instantiate(ShieldOBJ, ShieldSpawnLoc.transform));
         }
     }
 
@@ -96,11 +136,9 @@ public class PlayerManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("mop");
         if (collision.tag == "Bullet" && CanDamage)
         {
-            print("mep");
-            ChangeLife(-1);
+            DamagePlayer(-1);
             //triggure flash and inv
             StartCoroutine(Invincibility());
             StartCoroutine(Flicker());

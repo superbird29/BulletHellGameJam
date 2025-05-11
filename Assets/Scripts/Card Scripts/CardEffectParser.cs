@@ -62,7 +62,7 @@ public class CardEffectParser : MonoBehaviour
                 break;
             // If the Player is healing
             case CardEffectType.Heal:
-                GameManager.Instance._PlayerManager.ChangeLife(effect.value);
+                GameManager.Instance._PlayerManager.ChangeHP(effect.value);
                 break;
             // If the Player is Gaining shields
             case CardEffectType.GainShield:
