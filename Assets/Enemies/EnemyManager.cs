@@ -28,7 +28,7 @@ public class EnemyManager : MonoBehaviour
 
     private EnemyLevel currentLevel;
 
-    [SerializeField] List<EnemyRound> rounds;
+    private List<EnemyRound> rounds;
 
     [SerializeField] List<EnemyLevel> levels;
 
