@@ -63,6 +63,7 @@ public class RoundManager : MonoBehaviour
         if(DrawCards == true)
         {
             DrawCards = false;
+            GameManager.Instance._PlayerManager.ClearWeapons();
             GameManager.Instance._DeckManager.GenerateHand();
             SetRoundTime(roundDuration);
         }

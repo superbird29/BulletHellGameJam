@@ -89,7 +89,7 @@ Transform:
   m_GameObject: {fileID: 260909637838455917}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.5, y: 0.1, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0.07, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -111,7 +111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6060832603318118072
 Transform:
   m_ObjectHideFlags: 0
@@ -228,7 +228,7 @@ MonoBehaviour:
   makeNodeOnly: 0
   LocalPitch: 0
   customIndicator: {fileID: 0}
-  Shot: {fileID: 1000012992948024, guid: 89d5434255a3f5b4b9d8c49370bdecbb, type: 3}
+  Shot: {fileID: 1000012992948024, guid: 318b3152c1412d94a8223143ea7a7f20, type: 3}
   ShotSpeed: 7
   LocalOffset: 0
   controller: {fileID: 0}
@@ -406,7 +406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7440140974554166221
 Transform:
   m_ObjectHideFlags: 0
@@ -661,7 +661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2764473478017141173
 Transform:
   m_ObjectHideFlags: 0
@@ -778,7 +778,7 @@ MonoBehaviour:
   makeNodeOnly: 0
   LocalPitch: 0
   customIndicator: {fileID: 0}
-  Shot: {fileID: 1000012992948024, guid: 89d5434255a3f5b4b9d8c49370bdecbb, type: 3}
+  Shot: {fileID: 1000012992948024, guid: 318b3152c1412d94a8223143ea7a7f20, type: 3}
   ShotSpeed: 7
   LocalOffset: 0
   controller: {fileID: 0}
@@ -988,7 +988,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7260865108041473570
 Transform:
   m_ObjectHideFlags: 0
@@ -1124,7 +1124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7038620070264650618
 Transform:
   m_ObjectHideFlags: 0
@@ -1287,7 +1287,7 @@ Transform:
   m_GameObject: {fileID: 3197467586263263145}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.25, y: 0.1, z: 0}
+  m_LocalPosition: {x: 0.25, y: 0.07, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1319,7 +1319,7 @@ Transform:
   m_GameObject: {fileID: 3238655120472451438}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.5, y: 0.1, z: 0}
+  m_LocalPosition: {x: -0.5, y: 0.07, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1373,7 +1373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1266606627093940399
 Transform:
   m_ObjectHideFlags: 0
@@ -1524,7 +1524,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4053299907557025467
 Transform:
   m_ObjectHideFlags: 0
@@ -1673,7 +1673,7 @@ Transform:
   m_GameObject: {fileID: 4060934621277449779}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.25, y: 0.1, z: 0}
+  m_LocalPosition: {x: -0.25, y: 0.07, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1837,6 +1837,23 @@ MonoBehaviour:
   Blank: 0
   Rigidbody: {fileID: 6899516783275193752}
   CanDamage: 1
+  FireBallEmitterList:
+  - {fileID: 9209191064815400082}
+  - {fileID: 2717892645707120167}
+  - {fileID: 600917467928509039}
+  - {fileID: 1870521380212748624}
+  FireBallCount: 0
+  LightingEmitterList:
+  - {fileID: 260909637838455917}
+  - {fileID: 3238655120472451438}
+  - {fileID: 4060934621277449779}
+  - {fileID: 3197467586263263145}
+  LightingCount: 0
+  IceBallEmitterList:
+  - {fileID: 1008707043900185956}
+  - {fileID: 3238655120472451438}
+  - {fileID: 8226149795744105321}
+  IceBallCount: 0
 --- !u!50 &6899516783275193752
 Rigidbody2D:
   serializedVersion: 4
@@ -2402,7 +2419,7 @@ MonoBehaviour:
   makeNodeOnly: 0
   LocalPitch: 0
   customIndicator: {fileID: 0}
-  Shot: {fileID: 1000012992948024, guid: 89d5434255a3f5b4b9d8c49370bdecbb, type: 3}
+  Shot: {fileID: 1000012992948024, guid: 318b3152c1412d94a8223143ea7a7f20, type: 3}
   ShotSpeed: 7
   LocalOffset: 0
   controller: {fileID: 0}
@@ -2674,7 +2691,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7445251298297808777
 Transform:
   m_ObjectHideFlags: 0
@@ -2859,7 +2876,7 @@ MonoBehaviour:
   makeNodeOnly: 0
   LocalPitch: 0
   customIndicator: {fileID: 0}
-  Shot: {fileID: 1000012992948024, guid: 89d5434255a3f5b4b9d8c49370bdecbb, type: 3}
+  Shot: {fileID: 1000012992948024, guid: 318b3152c1412d94a8223143ea7a7f20, type: 3}
   ShotSpeed: 7
   LocalOffset: 0
   controller: {fileID: 0}
@@ -3069,7 +3086,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3315891405982071479
 Transform:
   m_ObjectHideFlags: 0
@@ -3411,7 +3428,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4958902858345530916
 Transform:
   m_ObjectHideFlags: 0
