@@ -16,7 +16,7 @@ MonoBehaviour:
   description: Gain 1 Blank
   effects:
   - category: 0
-    effectType: 4
+    effectType: 0
     value: 1
     weaponType: 0
     isActive: 0

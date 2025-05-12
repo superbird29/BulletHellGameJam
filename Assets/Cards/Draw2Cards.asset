@@ -16,7 +16,7 @@ MonoBehaviour:
   description: Immediately draw 2 new cards
   effects:
   - category: 2
-    effectType: 9
+    effectType: 0
     value: 2
     weaponType: 0
     isActive: 0

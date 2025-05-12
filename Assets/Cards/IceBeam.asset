@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b25ea7bf7f0af4a880dcac4ace293f, type: 3}
   m_Name: IceBeam
   m_EditorClassIdentifier: 
-  cardName: Ice Beam Upgrade
-  description: Upgrades your gun to an ice beam
+  cardName: Ice Ball
+  description: Shoot Tracking Ice Balls
   effects:
-  - category: 3
-    effectType: 8
-    value: 0
+  - category: 1
+    effectType: 12
+    value: 1
     weaponType: 0
     isActive: 1
     weaponObject: {fileID: 0}

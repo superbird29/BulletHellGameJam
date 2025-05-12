@@ -1,22 +1,28 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    
     public Bounds spawnArea;
 
-    private bool allEnemiesDead;
+    private bool inbetweenRounds = false;
+    private bool inbetweenLevels = false;
 
-    bool inbetweenRounds = false;
+    private bool finishedWave = false;
 
-    public int round;
+    public int roundCount;
+    public int levelCount;
+
+    public float timeBetweenRounds = 1f;
 
     private EnemyRound currentRound;
+    private EnemyLevel currentLevel;
 
-    [SerializeField] List<EnemyRound> rounds;
+    private Queue<EnemyGroupManager> waveQueue;
+    private List<EnemyRound> rounds;
+
+    [SerializeField] List<EnemyLevel> levels;
 
     public List<EnemyStateMachine> currentRoundEnemies;
 
@@ -25,48 +31,104 @@ public class EnemyManager : MonoBehaviour
     void Start()
     {
         spawnArea = GetComponent<BoxCollider2D>().bounds;
-        round = 0;
+        levelCount = 0;
         currentRoundEnemies = new List<EnemyStateMachine>();
-        allEnemiesDead = true;
+        StartNextLevel();
     }
 
     void Update()
     {
-        if(allEnemiesDead && round < rounds.Count){
-            StartNextRound(30f);
-        }
+        if (inbetweenLevels || inbetweenRounds) return;
 
-        allEnemiesDead = inbetweenRounds || (currentRoundEnemies.Count == 0 && currentRound.waves.Count == 0);
+        if (currentRoundEnemies.Count == 0 && waveQueue.Count == 0 && finishedWave)
+        {
+            GameManager.Instance._RoundManager.EndRoundRewards();
+
+            if (roundCount < rounds.Count)
+            {
+                inbetweenRounds = true;
+                finishedWave = false;
+                StartNextRound(GameManager.Instance._RoundManager.roundDuration);
+            }
+            else if (levelCount < levels.Count)
+            {
+                inbetweenLevels = true;
+                StartNextLevel();
+            }
+        }
     }
 
-    void StartNextRound(float roundTime){
-        inbetweenRounds = true;
-        currentRound = Instantiate(rounds[round]);
-        float timeBetweenWaves = roundTime/currentRound.waves.Count;
+    public void StartNextLevel()
+    {
+        inbetweenLevels = true;
+        finishedWave = false;
 
-        for(int i = 0; i < currentRound.waves.Count;i++){
-            StartCoroutine(WaveTimer(timeBetweenWaves * i,currentRound.waves[i]));
-        }
-        round++;
+        currentLevel = Instantiate(levels[levelCount]);
+        rounds = currentLevel.rounds;
+        roundCount = 0;
+        levelCount++;
+
+        StartNextRound(GameManager.Instance._RoundManager.roundDuration);
+        inbetweenLevels = false;
+    }
+
+    public void StartNextRound(float roundTime)
+    {
+        inbetweenRounds = true;
+
+        currentRound = Instantiate(rounds[roundCount]);
+        waveQueue = new Queue<EnemyGroupManager>(currentRound.waves);
+
+        roundCount++;
+        currentRoundEnemies.Clear();
+
+        StartCoroutine(ManageWaveSequence(roundTime));
         inbetweenRounds = false;
     }
 
-    public void AddEnemyToList(EnemyStateMachine enemy){
-        currentRoundEnemies.Add(enemy);
-    }
+IEnumerator ManageWaveSequence(float roundDuration)
+{
+    yield return new WaitForSeconds(timeBetweenRounds);
 
-    public void RemoveEnemyFromList(EnemyStateMachine enemy){
-        currentRoundEnemies.Remove(enemy);
-    }
-
-    void SpawnWave(EnemyGroupManager wave){
-        Instantiate(wave,transform.position,Quaternion.identity);
-        currentRound.waves.Remove(wave);
-    }
-
-    IEnumerator WaveTimer(float time,EnemyGroupManager wave){
-        yield return new WaitForSeconds(time);
+    float timeBetweenWaves = roundDuration / Mathf.Max(1, waveQueue.Count);
+    while (waveQueue.Count > 0)
+    {
+        EnemyGroupManager wave = waveQueue.Dequeue();
         SpawnWave(wave);
+
+        yield return new WaitUntil(() => currentRoundEnemies.Count > 0);
+
+        
+        float elapsed = 0f;
+
+        while (elapsed < timeBetweenWaves)
+        {
+            if (currentRoundEnemies.Count == 0)
+                break;
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+    }
+    finishedWave = true;
+}
+
+
+    void SpawnWave(EnemyGroupManager wave)
+    {
+        
+        Instantiate(wave, transform.position, Quaternion.identity);
     }
 
+    public void AddEnemyToList(EnemyStateMachine enemy)
+    {
+        if (!currentRoundEnemies.Contains(enemy))
+            currentRoundEnemies.Add(enemy);
+    }
+
+    public void RemoveEnemyFromList(EnemyStateMachine enemy)
+    {
+        if (currentRoundEnemies.Contains(enemy))
+            currentRoundEnemies.Remove(enemy);
+    }
 }

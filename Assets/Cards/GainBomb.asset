@@ -16,7 +16,7 @@ MonoBehaviour:
   description: You gain 1 bomb
   effects:
   - category: 0
-    effectType: 3
+    effectType: 0
     value: 1
     weaponType: 0
     isActive: 0

@@ -62,7 +62,7 @@ public class CardEffectParser : MonoBehaviour
                 break;
             // If the Player is healing
             case CardEffectType.Heal:
-                GameManager.Instance._PlayerManager.ChangeLife(effect.value);
+                GameManager.Instance._PlayerManager.ChangeHP(effect.value);
                 break;
             // If the Player is Gaining shields
             case CardEffectType.GainShield:
@@ -82,15 +82,24 @@ public class CardEffectParser : MonoBehaviour
                 break;
             // If the player is shooting bullets faster
             case CardEffectType.FasterFirerate:
-                ModifySpeed(effect.value);
+                ModifySpeed(effect.value);  //Defunct
                 break;
             // If the player is shooting bigger or smaller bullets
             case CardEffectType.BulletSize:
                 ModifySize(effect.value);
                 break;
             // If the player is changing what weapon they are using
-            case CardEffectType.ToggleWeapon:
-                ToggleWeapon(effect.weaponType.ToString(), effect.isActive);
+            case CardEffectType.HomingIce:
+                print("ice");
+                GameManager.Instance._PlayerManager.AddHomingIce();
+                break;
+            case CardEffectType.FireballBullet:
+                print("fire");
+                GameManager.Instance._PlayerManager.AddFireBall();
+                break;
+            case CardEffectType.LightningLaser:
+                print("laser");
+                GameManager.Instance._PlayerManager.AddLaser();
                 break;
             // A unrecognized effect was done by the card
             default:

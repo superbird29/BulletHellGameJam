@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7155776962962323049}
   - component: {fileID: 2740128013739989747}
+  - component: {fileID: 1130972102455651791}
+  - component: {fileID: 275475953294222856}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -46,3 +48,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _PlayerManager: {fileID: 0}
   _RoundManager: {fileID: 0}
+  _DeckManager: {fileID: 0}
+  _EnemyManager: {fileID: 0}
+--- !u!114 &1130972102455651791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7015696669314830004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5131e20220461fa4cba0baa62026b8e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &275475953294222856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7015696669314830004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd9e496a7d247264e8bb2284f8d0a06d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardPool: []
+  playerHand: []
+  deck: []
+  discard: []
+  prefabedCards: []
+  handSize: 4
+  currentHandSizeThisRound: 4
+  maxHandSize: 10
+  deckSize: 10
+  cardPrefab: {fileID: 0}
+  cardSpacing: 50
+  heightSpacing: 250
+  currentHeightSpacing: 0
+  newRow: 0
+  handPosition: {fileID: 0}

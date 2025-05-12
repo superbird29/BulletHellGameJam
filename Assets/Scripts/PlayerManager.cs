@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -28,6 +29,15 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] Rigidbody2D Rigidbody;
     [SerializeField] bool CanDamage = true;
 
+    //bullet stuff
+    [SerializeField] List<GameObject> FireBallEmitterList;
+    [SerializeField] int FireBallCount = 0;
+    [SerializeField] List<GameObject> LightingEmitterList;
+    [SerializeField] int LightingCount = 0;
+    [SerializeField] List<GameObject> IceBallEmitterList;
+    [SerializeField] int IceBallCount = 0;
+
+
     // Update is called once per frame
     void Update()
     {
@@ -35,38 +45,85 @@ public class PlayerManager : MonoBehaviour
         MovementVertical = Input.GetAxis("Vertical");
         if(HP <= 0)
         {
-            //lose
+            GameManager.Instance._RoundManager.LoseScreen.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
-    public void SetHomingTrue(bool homing)
+    public void ClearWeapons()
     {
-        //set homing true
+        print("Cleared Weapons");
+        for (int i = 0; i < IceBallEmitterList.Count; i++)
+        {
+            IceBallEmitterList[i].SetActive(false);
+        }
+        for (int j = 0; j < LightingEmitterList.Count; j++)
+        {
+            LightingEmitterList[j].SetActive(false);
+        }
+        for (int k = 0; k < FireBallEmitterList.Count; k++)
+        {
+            FireBallEmitterList[k].SetActive(false);
+        }
+        FireBallCount = 0;
+        LightingCount = 0;
+        IceBallCount = 0;
     }
 
-    public void ChangeLife(int life)
+    public void AddHomingIce()
     {
-        if(HP == 3 && life > 0)
+        //set homing true
+        print("added ice");
+        IceBallEmitterList[IceBallCount].SetActive(true);
+        IceBallCount += 1;
+    }
+    public void AddLaser()
+    {
+        //set homing true
+        print("added Lightning");
+        LightingEmitterList[LightingCount].SetActive(true);
+        LightingCount += 1;
+    }
+    public void AddFireBall()
+    {
+        //set homing true
+        print("added Fire");
+        FireBallEmitterList[FireBallCount].SetActive(true);
+        FireBallCount += 1;
+    }
+
+
+    //used for healing life
+    public void ChangeHP(int life)
+    {
+        //changes add life
+        HP += life;
+        if (HP <= 3)
+            HPObj[HP].GetComponent<Image>().sprite = fullHPOBJ;
+        if(HP < 3)
         {
-            Shield += life;
-            //Destroy(ShieldOBJList[ShieldOBJList.Count]);
-            //ShieldOBJList.RemoveAt(ShieldOBJList.Count);
-            return;
+            HP = 3; //this is bad code move along
+        }
+    }
+
+    //Damage Only
+    public void DamagePlayer(int damage)
+    {
+        // Check for shield, Then if there are shields remove them
+        // then if no shields 
+        if (Shield > 0)
+        {
+            //removes the end shield
+            Shield += damage;
+            print(ShieldOBJList.Count);
+            Destroy(ShieldOBJList[ShieldOBJList.Count-1]);
+            ShieldOBJList.RemoveAt(ShieldOBJList.Count-1);
+            //return;
         }
         else
         {
-            HP += life;
-        }
-        if(life < 0)
-        {
-            if(HP >= 0)
-                HPObj[HP].GetComponent<Image>().sprite = emptyHPOBJ;
-        }
-
-        if(life > 0)
-        {
-            if (HP <= 3)
-                HPObj[HP].GetComponent<Image>().sprite = fullHPOBJ;
+            HP += damage;
+            HPObj[HP-1].GetComponent<Image>().sprite = emptyHPOBJ;
         }
     }
 
@@ -75,7 +132,7 @@ public class PlayerManager : MonoBehaviour
         Shield += shield;
         for(int i = 0; i < shield; i++)
         {
-            //ShieldOBJList.Add(Instantiate(ShieldOBJ, ShieldSpawnLoc.transform + Vector3()));
+            ShieldOBJList.Add(Instantiate(ShieldOBJ, ShieldSpawnLoc.transform));
         }
     }
 
@@ -96,11 +153,9 @@ public class PlayerManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("mop");
         if (collision.tag == "Bullet" && CanDamage)
         {
-            print("mep");
-            ChangeLife(-1);
+            DamagePlayer(-1);
             //triggure flash and inv
             StartCoroutine(Invincibility());
             StartCoroutine(Flicker());
