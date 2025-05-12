@@ -7,7 +7,7 @@ public class EnemyManager : MonoBehaviour
     public Bounds spawnArea;
 
     private bool inbetweenRounds = false;
-    private bool inbetweenLevels = false;
+    public bool inbetweenLevels = false;
 
     private bool finishedWave = false;
 
@@ -28,7 +28,12 @@ public class EnemyManager : MonoBehaviour
 
     public GameObject middleOfPlayArea;
 
-    void Start()
+    private void Start()
+    {
+        inbetweenLevels = true;
+    }
+
+    public void Started()
     {
         spawnArea = GetComponent<BoxCollider2D>().bounds;
         levelCount = 0;
@@ -67,8 +72,8 @@ public class EnemyManager : MonoBehaviour
         rounds = currentLevel.rounds;
         roundCount = 0;
         levelCount++;
-
         StartNextRound(GameManager.Instance._RoundManager.roundDuration);
+        
         inbetweenLevels = false;
     }
 

@@ -8,6 +8,6 @@ public class LevelSwitcher : MonoBehaviour
     //switches scene with level name
     public void SwitchLevel(string lvlname)
     {
-        SceneManager.LoadScene(lvlname);
+        GameManager.Instance.SwitchLevel(lvlname);
     }
 }

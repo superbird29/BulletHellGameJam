@@ -60,7 +60,7 @@ public class RoundManager : MonoBehaviour
         {
             DrawCards = true;
         }
-        if(DrawCards == true)
+        if(DrawCards == true && GameManager.Instance._PlayerManager != null)
         {
             DrawCards = false;
             GameManager.Instance._PlayerManager.ClearWeapons();

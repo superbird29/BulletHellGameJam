@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fire Ball
   m_EditorClassIdentifier: 
   cardName: Fire Ball
-  description: Upgrades your gun to an ice beam
+  description: Fire
   effects:
   - category: 1
     effectType: 14

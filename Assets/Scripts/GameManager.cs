@@ -48,8 +48,35 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        DontDestroyOnLoad(this.gameObject);
+        SwitchLevel("Title Sceen");
+    }
+
+
     public void SwitchLevel(string lvlname)
     {
+        StartCoroutine(SwitchLevelIE(lvlname));
+    }
+
+    public IEnumerator SwitchLevelIE(string lvlname)
+    {
         SceneManager.LoadScene(lvlname);
+        if (lvlname != "Title Sceen")
+        {
+            yield return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
+            _PlayerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
+            _RoundManager = GameObject.Find("Canvas").GetComponent<RoundManager>();
+            _EnemyManager = GameObject.Find("EnemyManager").GetComponent<EnemyManager>();
+            _EnemyManager.Started();
+        }
+    }
+
+    public void ReloadLevel()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

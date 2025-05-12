@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _PlayerManager: {fileID: 0}
   _RoundManager: {fileID: 0}
-  _DeckManager: {fileID: 0}
+  _DeckManager: {fileID: 275475953294222856}
   _EnemyManager: {fileID: 0}
 --- !u!114 &1130972102455651791
 MonoBehaviour:
@@ -76,7 +76,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardPool: []
   playerHand: []
-  deck: []
+  deck:
+  - {fileID: 11400000, guid: b36f9dbac79ea9547be5fe478f0ca4bf, type: 2}
+  - {fileID: 11400000, guid: ed302d1b3807d5345a80fab9ed080413, type: 2}
+  - {fileID: 11400000, guid: 52c13cee9605d714fbf870952c0eaff3, type: 2}
+  - {fileID: 11400000, guid: fa718c1253fd23347a846bb0eb163d3f, type: 2}
   discard: []
   prefabedCards: []
   handSize: 4
