@@ -20,3 +20,4 @@ MonoBehaviour:
     value: 1
     weaponType: 0
     isActive: 0
+    weaponObject: {fileID: 0}
