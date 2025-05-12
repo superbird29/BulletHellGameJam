@@ -57,18 +57,16 @@ public class MoveInASpiralBehaviour : BaseMovementBehaviour
         List<Vector3> points = new List<Vector3>();
 
         float angleStep = 2 * Mathf.PI / numPoints;
-        float currentY = 0f;  
 
         for (int i = 0; i < numPoints; i++)
         {
             float angle = i * angleStep;
             
             float x = Mathf.Cos(angle) * radius;
-            float y = Mathf.Sin(angle) * radius;
+            float y = Mathf.Sin(angle) * radius - i * downwardSpeed;
             
             
             points.Add(new Vector3(x, y, 0));
-            currentY -= downwardSpeed;  
         }
 
         return points;
@@ -83,6 +81,5 @@ public class MoveInASpiralBehaviour : BaseMovementBehaviour
             currentPointIndex = 0;
             destination = enemy.transform.position + pathPoints[currentPointIndex];
         }
-        Debug.Log(destination);
     }
 }

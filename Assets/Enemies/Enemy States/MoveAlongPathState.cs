@@ -41,7 +41,6 @@ public class MoveAlongPathState : EnemyState
 
     protected override void InnerUpdateState()
     {
-        Debug.Log("Moving!");
         if (usePointsAsVectors)
         {
             UsePathDistances();

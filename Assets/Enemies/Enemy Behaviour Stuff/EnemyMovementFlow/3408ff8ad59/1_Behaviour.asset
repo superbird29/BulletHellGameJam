@@ -17,4 +17,4 @@ MonoBehaviour:
   nextBehaviour: {fileID: 0}
   radius: 1
   numPoints: 30
-  downwardSpeed: 0.5
+  downwardSpeed: 0.1

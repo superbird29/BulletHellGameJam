@@ -8,7 +8,6 @@ public class EnemyPlayArea : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy")) 
         { 
-            Debug.Log("Enemy Left");
             Destroy(collision.gameObject); 
         } 
     }

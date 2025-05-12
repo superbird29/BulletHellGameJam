@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5703223572795317429, guid: e514774deeb7a6e4ba863eb9b3faab35, type: 3}
       propertyPath: rows
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5703223572795317429, guid: e514774deeb7a6e4ba863eb9b3faab35, type: 3}
       propertyPath: zone
@@ -22,12 +22,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5703223572795317429, guid: e514774deeb7a6e4ba863eb9b3faab35, type: 3}
       propertyPath: columns
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5703223572795317429, guid: e514774deeb7a6e4ba863eb9b3faab35, type: 3}
       propertyPath: enemyPrefab
       value: 
-      objectReference: {fileID: 2182842179692480077, guid: 2bf416cacef17594184a2c600fa85e5a, type: 3}
+      objectReference: {fileID: 1636982337111164663, guid: 1b07b2afe16c4524fa19a6c1aa2819ce, type: 3}
     - target: {fileID: 5703223572795317429, guid: e514774deeb7a6e4ba863eb9b3faab35, type: 3}
       propertyPath: staggerRows
       value: 0

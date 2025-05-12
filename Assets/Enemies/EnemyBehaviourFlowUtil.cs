@@ -193,9 +193,7 @@ public class EnemyBehaviourFlowUtil : MonoBehaviour
 
     private String GetRandomName()
     {
-        Debug.Log("HEY!");
         Guid myGuid = System.Guid.NewGuid();
-        Debug.Log(myGuid);
 
         return myGuid.ToString().Substring(25);
     }

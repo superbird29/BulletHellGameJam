@@ -65,7 +65,6 @@ public class EnemyStateMachine : MonoBehaviour
     }
 
     private void OnDestroy() {
-        Debug.Log("I'm dead");
         enemyManager.RemoveEnemyFromList(this);
     }
 }
