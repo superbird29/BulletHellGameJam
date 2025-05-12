@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Level 2 Round 6
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 2323671436386948280, guid: 66273d77529f5fd4595fade728227ec3, type: 3}
-  - {fileID: 2323671436386948280, guid: aa81fa5734c8be74abf33389c038896c, type: 3}
-  - {fileID: 2323671436386948280, guid: 4da80a0edb574b442ba14174c35bb301, type: 3}
-  - {fileID: 2323671436386948280, guid: 4737a0369549cbe46a07ea865b662c1a, type: 3}
-  - {fileID: 2323671436386948280, guid: 410832abc12c8be4f9e90881dec46731, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
