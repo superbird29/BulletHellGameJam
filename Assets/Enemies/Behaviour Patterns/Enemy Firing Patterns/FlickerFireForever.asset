@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: FlickerFireForever
   m_EditorClassIdentifier: 
   nextBehaviour: {fileID: 0}
+  shotSpeed: 5
   repititions: 1000
   firingCooldown: 0.5
   timeBetweenShots: 0.5
