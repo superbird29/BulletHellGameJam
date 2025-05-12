@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32f45f430662e2a49ae1fa0783b3e62b, type: 3}
+  m_Name: MoveFrontThenDiagonal
+  m_EditorClassIdentifier: 
+  nextState: {fileID: 0}
+  startingMovementBehaviour: {fileID: 11400000, guid: 8ebd19d2418479f4789adaa902e30754, type: 2}
+  startingFiringBehaviour: {fileID: 11400000, guid: 7332ad35f45590648ad2b2156c6a8733, type: 2}
+  startingAimingBehaviour: {fileID: 11400000, guid: 4ecfd2ae6095e604db6e16414ae181e1, type: 2}

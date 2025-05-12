@@ -10,12 +10,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3570695242835275953, guid: 7269242ae293c0f4ca60de711b0fcd99, type: 3}
       propertyPath: m_Name
-      value: BasicDemon Variant
+      value: DemonDiagonal
       objectReference: {fileID: 0}
     - target: {fileID: 3808776132968005109, guid: 7269242ae293c0f4ca60de711b0fcd99, type: 3}
       propertyPath: startingState
       value: 
-      objectReference: {fileID: 11400000, guid: a5aaaf5816226974681da64f4555c486, type: 2}
+      objectReference: {fileID: 11400000, guid: e687ef4f810ea654aa8b9e3751dcd5df, type: 2}
     - target: {fileID: 8073873773942305951, guid: 7269242ae293c0f4ca60de711b0fcd99, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3245579380989385347}
   - component: {fileID: 8870808021951230053}
+  - component: {fileID: 8971552447263798582}
   m_Layer: 0
   m_Name: MiddleOfPlayArea
   m_TagString: Untagged
@@ -77,6 +78,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 18.5, y: 11}
   m_EdgeRadius: 0
+--- !u!114 &8971552447263798582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743379476390402737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18b78f9a3433cb46a4e0c063230a28f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9089692059060222282
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,6 +141,7 @@ MonoBehaviour:
     m_Extent: {x: 0, y: 0, z: 0}
   roundCount: 0
   levelCount: 0
+  timeBetweenRounds: 1
   levels:
   - {fileID: 11400000, guid: a9f0797bd27af5c4482f5b405d764a6d, type: 2}
   - {fileID: 11400000, guid: c825cc1549df03e47959b6eb6a08b7d0, type: 2}

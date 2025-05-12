@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32f45f430662e2a49ae1fa0783b3e62b, type: 3}
+  m_Name: EnterFrontMoveInABox_CompositeState
+  m_EditorClassIdentifier: 
+  nextState: {fileID: 0}
+  startingMovementBehaviour: {fileID: 11400000, guid: 1c804f8b3b07753408d16392f24fb865, type: 2}
+  startingFiringBehaviour: {fileID: 11400000, guid: 4ccac72cb35902043af47038d567ccb9, type: 2}
+  startingAimingBehaviour: {fileID: 11400000, guid: bde648c62e68f544b8b6e71ff7fdfe6b, type: 2}

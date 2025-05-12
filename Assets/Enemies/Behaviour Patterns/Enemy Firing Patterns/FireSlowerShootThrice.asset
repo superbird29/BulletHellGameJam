@@ -15,5 +15,5 @@ MonoBehaviour:
   nextBehaviour: {fileID: 0}
   shotSpeed: 5
   repititions: 3
-  firingCooldown: 1
-  timeBetweenShots: 0.1
+  firingCooldown: 2
+  timeBetweenShots: 0.5
