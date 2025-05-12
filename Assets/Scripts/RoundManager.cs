@@ -16,7 +16,7 @@ public class RoundManager : MonoBehaviour
     [SerializeField] GameObject cardTimeObj;
     [SerializeField] float cardTimer = 10f;
     // How long the current round will last
-    [SerializeField] float roundDuration = 10f;
+    public float roundDuration = 10f;
     [SerializeField] bool DrawCards = false;
     [SerializeField] public GameObject LoseScreen;
 
@@ -45,7 +45,7 @@ public class RoundManager : MonoBehaviour
 
     public void EndRoundRewards()
     {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         //activate upgrade screen
         //Generate Upgrade Screen
         //Have player chose upgrades
