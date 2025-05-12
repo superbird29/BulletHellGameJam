@@ -198,6 +198,10 @@ PrefabInstance:
       propertyPath: flowUtil
       value: 
       objectReference: {fileID: 5006299276737435965}
+    - target: {fileID: 6933068325791610635, guid: 9f6ce876814698f438bf9be93bbe81f6, type: 3}
+      propertyPath: folderName
+      value: Assets/Enemies/Behaviour Patterns/Enemy Movement Patterns
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
