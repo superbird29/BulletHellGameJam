@@ -223,9 +223,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 275475953294222856, guid: c5c7b2ce4051a1c4bac3d7e73de034d8, type: 3}
+      propertyPath: handSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 275475953294222856, guid: c5c7b2ce4051a1c4bac3d7e73de034d8, type: 3}
       propertyPath: cardPrefab
       value: 
       objectReference: {fileID: 3654833598947072633, guid: fe74f65ffcb0a264bb012098cc3741fa, type: 3}
+    - target: {fileID: 275475953294222856, guid: c5c7b2ce4051a1c4bac3d7e73de034d8, type: 3}
+      propertyPath: cardSpacing
+      value: 210
+      objectReference: {fileID: 0}
+    - target: {fileID: 275475953294222856, guid: c5c7b2ce4051a1c4bac3d7e73de034d8, type: 3}
+      propertyPath: heightSpacing
+      value: -260
+      objectReference: {fileID: 0}
     - target: {fileID: 275475953294222856, guid: c5c7b2ce4051a1c4bac3d7e73de034d8, type: 3}
       propertyPath: cardPool.Array.size
       value: 5
@@ -250,6 +262,10 @@ PrefabInstance:
       propertyPath: cardPool.Array.data[4]
       value: 
       objectReference: {fileID: 11400000, guid: b36f9dbac79ea9547be5fe478f0ca4bf, type: 2}
+    - target: {fileID: 275475953294222856, guid: c5c7b2ce4051a1c4bac3d7e73de034d8, type: 3}
+      propertyPath: currentHandSizeThisRound
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7015696669314830004, guid: c5c7b2ce4051a1c4bac3d7e73de034d8, type: 3}
       propertyPath: m_Name
       value: GameManager

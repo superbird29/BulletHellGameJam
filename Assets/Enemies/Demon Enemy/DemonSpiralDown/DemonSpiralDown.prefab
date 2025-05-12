@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 397873824891762239, guid: 7269242ae293c0f4ca60de711b0fcd99, type: 3}
+      propertyPath: ShotSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3570695242835275953, guid: 7269242ae293c0f4ca60de711b0fcd99, type: 3}
       propertyPath: m_Name
       value: DemonSpiralDown

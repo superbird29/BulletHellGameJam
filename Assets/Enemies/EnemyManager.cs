@@ -6,7 +6,7 @@ public class EnemyManager : MonoBehaviour
 {
     public Bounds spawnArea;
 
-    private bool inbetweenRounds = false;
+    public bool inbetweenRounds = false;
     public bool inbetweenLevels = false;
 
     private bool finishedWave = false;

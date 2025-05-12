@@ -14,7 +14,8 @@ public class RoundManager : MonoBehaviour
 
     //Round Info
     [SerializeField] GameObject cardTimeObj;
-    [SerializeField] float cardTimer = 10f;
+    [SerializeField] float cardTimer = 15f;
+    [SerializeField] float cardTimer2 = 15f;
     // How long the current round will last
     public float roundDuration = 10f;
     [SerializeField] bool DrawCards = false;
@@ -55,6 +56,12 @@ public class RoundManager : MonoBehaviour
         //close Upgrades
     }
 
+    public void RestartGame()
+    {
+        Time.timeScale = 1;
+        GameManager.Instance._EnemyManager.inbetweenRounds = false;
+    }
+
     private void Update()
     {
         pointsObj.GetComponent<TMP_Text>().text = "Points: "+ points.ToString();
@@ -68,7 +75,7 @@ public class RoundManager : MonoBehaviour
             DrawCards = false;
             GameManager.Instance._PlayerManager.ClearWeapons();
             GameManager.Instance._DeckManager.GenerateHand();
-            SetRoundTime(roundDuration);
+            SetRoundTime(cardTimer2);
         }
     }
 
