@@ -31,8 +31,11 @@ public class PlayerManager : MonoBehaviour
 
     //bullet stuff
     [SerializeField] List<GameObject> FireBallEmitterList;
+    [SerializeField] int FireBallCount = 0;
     [SerializeField] List<GameObject> LightingEmitterList;
+    [SerializeField] int LightingCount = 0;
     [SerializeField] List<GameObject> IceBallEmitterList;
+    [SerializeField] int IceBallCount = 0;
 
 
     // Update is called once per frame
@@ -47,10 +50,48 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    public void SetHomingTrue(bool homing)
+    public void ClearWeapons()
+    {
+        print("Cleared Weapons");
+        for (int i = 0; i < IceBallEmitterList.Count; i++)
+        {
+            IceBallEmitterList[i].SetActive(false);
+        }
+        for (int j = 0; j < LightingEmitterList.Count; j++)
+        {
+            LightingEmitterList[j].SetActive(false);
+        }
+        for (int k = 0; k < FireBallEmitterList.Count; k++)
+        {
+            FireBallEmitterList[k].SetActive(false);
+        }
+        FireBallCount = 0;
+        LightingCount = 0;
+        IceBallCount = 0;
+    }
+
+    public void AddHomingIce()
     {
         //set homing true
+        print("added ice");
+        IceBallEmitterList[IceBallCount].SetActive(true);
+        IceBallCount += 1;
     }
+    public void AddLaser()
+    {
+        //set homing true
+        print("added Lightning");
+        LightingEmitterList[LightingCount].SetActive(true);
+        LightingCount += 1;
+    }
+    public void AddFireBall()
+    {
+        //set homing true
+        print("added Fire");
+        FireBallEmitterList[FireBallCount].SetActive(true);
+        FireBallCount += 1;
+    }
+
 
     //used for healing life
     public void ChangeHP(int life)
@@ -84,30 +125,6 @@ public class PlayerManager : MonoBehaviour
             HP += damage;
             HPObj[HP-1].GetComponent<Image>().sprite = emptyHPOBJ;
         }
-
-
-        //if(HP == 3 && life > 0)
-        //{
-        //    Shield += life;
-        //    //Destroy(ShieldOBJList[ShieldOBJList.Count]);
-        //    //ShieldOBJList.RemoveAt(ShieldOBJList.Count);
-        //    return;
-        //}
-        //else
-        //{
-        //    HP += life;
-        //}
-        //if(life < 0)
-        //{
-        //    if(HP >= 0)
-        //        HPObj[HP].GetComponent<Image>().sprite = emptyHPOBJ;
-        //}
-
-        //if(life > 0)
-        //{
-        //    if (HP <= 3)
-        //        HPObj[HP].GetComponent<Image>().sprite = fullHPOBJ;
-        //}
     }
 
     public void GainShield(int shield)

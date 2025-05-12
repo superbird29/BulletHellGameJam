@@ -106,7 +106,7 @@ public class CardEffectDrawer : PropertyDrawer
                 return new[] { CardEffectType.Heal, CardEffectType.GainShield, CardEffectType.TakeDamage, CardEffectType.GainBomb, CardEffectType.GainBlank};
             // If Projectile was selected get the enums for projectile settings
             case CardEffectCategory.Projectile:
-                return new[] { CardEffectType.BulletSize, CardEffectType.BulletDamage, CardEffectType.FasterFirerate };
+                return new[] { CardEffectType.BulletSize, CardEffectType.BulletDamage, CardEffectType.FasterFirerate, CardEffectType.HomingIce, CardEffectType.FireballBullet, CardEffectType.LightningLaser };
             // If Card was selected get the enums for Card actions
             case CardEffectCategory.Card:
                 return new[] { CardEffectType.Draw, CardEffectType.Discard, CardEffectType.HandSizeIncrease};

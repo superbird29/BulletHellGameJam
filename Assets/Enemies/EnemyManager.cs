@@ -42,7 +42,7 @@ public class EnemyManager : MonoBehaviour
         levelCount = 0;
         currentRoundEnemies = new List<EnemyStateMachine>();
         allEnemiesDead = true;
-        StartNextLevel();
+        //StartNextLevel();
     }
 
     void Update()

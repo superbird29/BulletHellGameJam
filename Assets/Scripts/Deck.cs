@@ -44,7 +44,7 @@ public class Deck : MonoBehaviour
     // Generates the Deck when the scene is started
     public void Start()
     {
-        GenerateDeck();
+        //GenerateDeck();
     }
 
     /// <summary>
@@ -119,6 +119,7 @@ public class Deck : MonoBehaviour
                 CardEffectParser.Instance.ExecuteCard(currentCard);   
                 Destroy(card);
             });*/
+            print(currentCard);
             CardEffectParser.Instance.ExecuteCard(currentCard);   
             prefabedCards.Add(card);
         }

@@ -40,7 +40,13 @@ namespace CardGame
         // Card
         Draw,
         Discard,
-        HandSizeIncrease
+        HandSizeIncrease,
+
+        // Weapons
+        HomingIce,
+        LightningLaser,
+        FireballBullet
+
     }
 
     // The types of weapon that the player could potentially use
