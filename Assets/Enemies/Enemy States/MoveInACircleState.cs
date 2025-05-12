@@ -35,8 +35,6 @@ public class MoveInACircleState : EnemyState
     {
         startingPosition = enemy.transform.position;
         destination = startingPosition + pathPoints[currentPointIndex];
-        Debug.Log("Destination " + currentPointIndex + ": " + destination);
-        Debug.Log("Starting Position " + currentPointIndex + ": " + startingPosition);
     }
 
     protected override void InnerUpdateState()

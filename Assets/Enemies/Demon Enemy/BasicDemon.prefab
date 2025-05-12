@@ -144,6 +144,7 @@ MonoBehaviour:
   FinalExplodeFactor: 2
   DamageFlicker: 1
   FlickerDuration: 6
+  FlickerPause: 3
   DamageColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &4745616356774756349
 BoxCollider2D:
@@ -157,7 +158,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -188,7 +189,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4, y: 1}
+  m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
 --- !u!50 &6990688292662450037
 Rigidbody2D:
@@ -212,7 +213,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -232,7 +233,7 @@ MonoBehaviour:
   deathState: {fileID: 11400000, guid: b7ac2f2bbc1aa764c913c6a85c2d4e29, type: 2}
   startingState: {fileID: 11400000, guid: b37e0993cd18dad488b7bb3f7e296395, type: 2}
   enemySpeed: 0.05
-  controller: {fileID: 0}
+  controller: {fileID: 1710279906680669303}
   gameManager: {fileID: 0}
 --- !u!95 &1398781894588959620
 Animator:
@@ -335,10 +336,10 @@ MonoBehaviour:
   Master: 0
   FreezeEdits: 0
   origin: 0
-  FireCommand: 0
-  CommandKey: 32
+  FireCommand: 2
+  CommandKey: 0
   AutoHoldDuration: 45
-  TriggerAutoFire: 0
+  TriggerAutoFire: 1
   TriggerDelay: 10
   EmitterAmount: 1
   DefaultEmitter: 0
@@ -460,7 +461,7 @@ MonoBehaviour:
   LocalPitch: 0
   customIndicator: {fileID: 0}
   Shot: {fileID: 1000010161334016, guid: 6ceec300808987147a520c929f10a129, type: 3}
-  ShotSpeed: 30
+  ShotSpeed: 10
   LocalOffset: 0
   controller: {fileID: 0}
   OnStoppedFiring:

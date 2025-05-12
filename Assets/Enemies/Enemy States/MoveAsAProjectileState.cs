@@ -16,7 +16,6 @@ public class MoveAsAProjectileState : MoveTowardsPlayerState
             Debug.Log("You forgot to attach a damager body");
             NextState();
         }
-        Debug.Log("Gottem");
         damagerBody.enabled = true;
     }
 

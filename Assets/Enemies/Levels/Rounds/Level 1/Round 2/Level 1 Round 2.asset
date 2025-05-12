@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dee086d911a1ca4aba4113ac107f7e3, type: 3}
+  m_Name: Level 1 Round 2
+  m_EditorClassIdentifier: 
+  waves:
+  - {fileID: 2323671436386948280, guid: 3978650943b864b4a9a0109a41159a49, type: 3}
+  - {fileID: 2323671436386948280, guid: 4e19a3ee3ab85d544b98136ecf6b91af, type: 3}
+  - {fileID: 2323671436386948280, guid: ccfd0b47f4bb65141b4ac33b63c6dfa1, type: 3}
+  - {fileID: 2323671436386948280, guid: 3d95f620fcb44a54cbe0e7109dead6bb, type: 3}
+  - {fileID: 2323671436386948280, guid: 4b4c60041eb2f0f45822debd7833f8c7, type: 3}

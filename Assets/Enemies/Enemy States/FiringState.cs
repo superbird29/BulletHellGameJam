@@ -19,7 +19,6 @@ public class FiringState : EnemyState
         }
 
         if(!firing){
-            Debug.Log("FIRE!");
             enemy.controller.TriggerAutoFire = true;
             firing = true;
             enemy.StartCooldown(firingTime,FinishFiring);

@@ -29,7 +29,6 @@ public class EnemyStateMachine : MonoBehaviour
     {
         enemyManager = GameManager.Instance._EnemyManager;
         enemyManager.AddEnemyToList(this);
-        controller = GetComponentInChildren<BasePattern>();
         if(controller != null){
         controller.TriggerAutoFire = false;
         }
@@ -61,7 +60,6 @@ public class EnemyStateMachine : MonoBehaviour
     }
 
     IEnumerator CooldownTimer(float time, Action action){
-        Debug.Log("Time: " + time);
         yield return new WaitForSeconds(time);
         action.Invoke();
     }

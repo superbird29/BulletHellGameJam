@@ -24,7 +24,6 @@ public class MoveState : EnemyState
 
     protected override void InnerUpdateState()
     {
-        Debug.Log("Moving!");
         Vector3 enemyPosition = enemy.transform.position;
 
         enemy.transform.position = Vector3.MoveTowards(enemyPosition,destination,speed);
