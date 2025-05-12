@@ -43,7 +43,7 @@ public class Deck : MonoBehaviour
     // Where in the 2d space the hand is located for cards
     [SerializeField] private Transform handPosition;
     // Where in the 2d space the rewards are located
-    [SerializeField] private Transform rewards;
+    [SerializeField] private GameObject rewards;
     // Number of cards that show up as a rewards
     [SerializeField] private int numberOfCardRewards = 3;
 
@@ -106,7 +106,7 @@ public class Deck : MonoBehaviour
             }
             Vector3 position = new Vector3((i - newRow) * cardSpacing, currentHeightSpacing, 0f); //xPosition + 
             // the card object being instantiated
-            GameObject card = Instantiate(cardPrefab, handPosition);
+            GameObject card = Instantiate(cardPrefab, GameObject.Find("HandPosition").transform); //HandPosition
             // Name for Debugging purposes
             card.gameObject.name = playerHand[i].cardName + " " + i;
             // the position of the card being adjusted
@@ -229,7 +229,7 @@ public class Deck : MonoBehaviour
             // Getting the position that the card will be shifted
             Vector3 position = new Vector3(xPosition + i * cardSpacing, 0f, 0f);
             // the card object being instantiated
-            GameObject card = Instantiate(cardPrefab, handPosition);
+            GameObject card = Instantiate(cardPrefab, GameObject.Find("HandPosition").transform);
             // Name for debugging purposes
             card.gameObject.name = playerHand[i].cardName + " " + i;
             // the position of the card being adjusted
@@ -276,7 +276,7 @@ public class Deck : MonoBehaviour
         {
             Vector3 position = new Vector3((i - 1) * cardSpacing, currentHeightSpacing, 0f); //xPosition + 
             // the card object being instantiated
-            GameObject card = Instantiate(cardPrefab, rewards);
+            GameObject card = Instantiate(cardPrefab, GameObject.Find("Middle").transform); //GameObject.Find("Middle")
             Card currentCard = cardPool[Random.Range(0, cardPool.Count)];
             // the position of the card being adjusted
             card.transform.localPosition = position;
@@ -296,6 +296,7 @@ public class Deck : MonoBehaviour
                     Destroy(rewardCards[rewardCards.Count - 1]);
                     rewardCards.RemoveAt(rewardCards.Count - 1);
                 }
+                GameManager.Instance._RoundManager.RestartGame();
             });
             rewardCards.Add(card);
         }

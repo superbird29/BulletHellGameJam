@@ -28,6 +28,7 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField] Rigidbody2D Rigidbody;
     [SerializeField] bool CanDamage = true;
+    [SerializeField] bool wasJustDamage = true;
 
     //bullet stuff
     [SerializeField] List<GameObject> FireBallEmitterList;
@@ -122,9 +123,15 @@ public class PlayerManager : MonoBehaviour
         }
         else
         {
-            HP += damage;
-            HPObj[HP-1].GetComponent<Image>().sprite = emptyHPOBJ;
+            if(HP > 0)
+            {
+                print("damaged");
+                HP += damage;
+                HPObj[HP].GetComponent<Image>().sprite = emptyHPOBJ;
+                print(HPObj[HP]);
+            }
         }
+        wasJustDamage = true;
     }
 
     public void GainShield(int shield)
@@ -155,10 +162,14 @@ public class PlayerManager : MonoBehaviour
     {
         if (collision.tag == "Bullet" && CanDamage)
         {
-            DamagePlayer(-1);
-            //triggure flash and inv
             StartCoroutine(Invincibility());
             StartCoroutine(Flicker());
+            if(wasJustDamage)
+            {
+                wasJustDamage = false;
+                DamagePlayer(-1);
+            }
+            //triggure flash and inv
         }
     }
 

@@ -14,11 +14,13 @@ public class RoundManager : MonoBehaviour
 
     //Round Info
     [SerializeField] GameObject cardTimeObj;
-    [SerializeField] float cardTimer = 10f;
+    [SerializeField] float cardTimer = 15f;
+    [SerializeField] float cardTimer2 = 15f;
     // How long the current round will last
     public float roundDuration = 10f;
     [SerializeField] bool DrawCards = false;
     [SerializeField] public GameObject LoseScreen;
+    [SerializeField] public GameObject UpgradeScReen;
 
 
 
@@ -45,11 +47,19 @@ public class RoundManager : MonoBehaviour
 
     public void EndRoundRewards()
     {
-        //Time.timeScale = 0;
+        print("ended round");
+        Time.timeScale = 0;
+        GameManager.Instance._DeckManager.GenerateRewards();
         //activate upgrade screen
         //Generate Upgrade Screen
         //Have player chose upgrades
         //close Upgrades
+    }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1;
+        GameManager.Instance._EnemyManager.inbetweenRounds = false;
     }
 
     private void Update()
@@ -60,12 +70,12 @@ public class RoundManager : MonoBehaviour
         {
             DrawCards = true;
         }
-        if(DrawCards == true)
+        if(DrawCards == true && GameManager.Instance._PlayerManager != null)
         {
             DrawCards = false;
             GameManager.Instance._PlayerManager.ClearWeapons();
             GameManager.Instance._DeckManager.GenerateHand();
-            SetRoundTime(roundDuration);
+            SetRoundTime(cardTimer2);
         }
     }
 

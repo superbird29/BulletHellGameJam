@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2740128013739989747}
   - component: {fileID: 1130972102455651791}
   - component: {fileID: 275475953294222856}
+  - component: {fileID: 5964457132751886760}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -48,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _PlayerManager: {fileID: 0}
   _RoundManager: {fileID: 0}
-  _DeckManager: {fileID: 0}
+  _DeckManager: {fileID: 275475953294222856}
   _EnemyManager: {fileID: 0}
 --- !u!114 &1130972102455651791
 MonoBehaviour:
@@ -76,9 +77,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardPool: []
   playerHand: []
-  deck: []
+  deck:
+  - {fileID: 11400000, guid: b36f9dbac79ea9547be5fe478f0ca4bf, type: 2}
+  - {fileID: 11400000, guid: ed302d1b3807d5345a80fab9ed080413, type: 2}
+  - {fileID: 11400000, guid: 52c13cee9605d714fbf870952c0eaff3, type: 2}
+  - {fileID: 11400000, guid: fa718c1253fd23347a846bb0eb163d3f, type: 2}
   discard: []
   prefabedCards: []
+  rewardCards: []
   handSize: 4
   currentHandSizeThisRound: 4
   maxHandSize: 10
@@ -89,3 +95,17 @@ MonoBehaviour:
   currentHeightSpacing: 0
   newRow: 0
   handPosition: {fileID: 0}
+  rewards: {fileID: 0}
+  numberOfCardRewards: 3
+--- !u!114 &5964457132751886760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7015696669314830004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d0512260eb7e841b0e8e7a66118a3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
