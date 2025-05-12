@@ -50,9 +50,9 @@ public class Deck : MonoBehaviour
     // Generates the Deck when the scene is started
     public void Start()
     {
-        GenerateDeck();
-        GenerateHand();
-        GenerateRewards();
+        //GenerateDeck();
+        //GenerateHand();
+        //GenerateRewards();
     }
 
     /// <summary>
