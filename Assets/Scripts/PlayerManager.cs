@@ -47,7 +47,8 @@ public class PlayerManager : MonoBehaviour
         if(HP <= 0)
         {
             GameManager.Instance._RoundManager.LoseScreen.SetActive(true);
-            Time.timeScale = 0;
+            GameManager.Instance._DeckManager.prefabedCards.Clear();
+           Time.timeScale = 0;
         }
     }
 

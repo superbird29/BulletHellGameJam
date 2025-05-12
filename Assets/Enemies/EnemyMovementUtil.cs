@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+#if UNITY_EDITOR
 public class EnemyMovementUtil : MonoBehaviour
 {
     public List<Vector3> vector3s;
@@ -36,3 +37,4 @@ public class EnemyMovementUtil : MonoBehaviour
         flowUtil.SaveBehaviourToFolder(moveAlongPathBehaviour, folderName,movementName);
     }
 }
+#endif

@@ -57,6 +57,7 @@ public class EnemyManager : MonoBehaviour
             {
                 inbetweenRounds = true;
                 finishedWave = false;
+                StopAllCoroutines();
                 StartNextRound(GameManager.Instance._RoundManager.roundDuration);
             }
             else if (levelCount < levels.Count)
@@ -92,6 +93,7 @@ public class EnemyManager : MonoBehaviour
         currentRoundEnemies.Clear();
 
         StartCoroutine(ManageWaveSequence(roundTime));
+        StartCoroutine(ClearActiveEnemyList(30f));
         inbetweenRounds = false;
     }
 
@@ -121,7 +123,12 @@ IEnumerator ManageWaveSequence(float roundDuration)
     }
     finishedWave = true;
 }
-
+    
+    IEnumerator ClearActiveEnemyList(float time)
+    {
+        yield return new WaitForSeconds(time);
+            currentRoundEnemies.Clear();
+    }
 
     void SpawnWave(EnemyGroupManager wave)
     {

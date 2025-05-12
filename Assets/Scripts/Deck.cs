@@ -16,13 +16,13 @@ public class Deck : MonoBehaviour
     // The Pool of cards the player has access to
     [SerializeField] private List<Card> cardPool = new List<Card>();
     // The Pool of cards in the player's hand
-    [SerializeField] private List<Card> playerHand = new List<Card>();
+    [SerializeField] public List<Card> playerHand = new List<Card>();
     // The Pool of cards in the player's deck
-    [SerializeField] private List<Card> deck = new List<Card>();
+    [SerializeField] public List<Card> deck = new List<Card>();
     // The cards in the player's discard
     [SerializeField] private List<Card> discard = new List<Card>();
     // The reference to all of the prefabedCards made
-    [SerializeField] private List<GameObject> prefabedCards = new List<GameObject>();
+    [SerializeField] public List<GameObject> prefabedCards = new List<GameObject>();
     // The reference to the reward cards
     [SerializeField] private List<GameObject> rewardCards = new List<GameObject>();
     // Number of cards the player can have in their hand

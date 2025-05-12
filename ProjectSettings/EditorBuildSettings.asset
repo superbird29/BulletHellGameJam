@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Important Scenes/Game Manager Scene.unity
+    guid: 3c167688b60957b49b372165c4f46967
+  - enabled: 1
     path: Assets/Scenes/Important Scenes/Title Sceen.unity
     guid: 3ec16f6785d112e4eabb455db6263500
   - enabled: 1
     path: Assets/Scenes/Important Scenes/Level 1.unity
     guid: db57a691b3b134342942724d2bc51a0c
-  - enabled: 1
-    path: Assets/Scenes/Important Scenes/Level 2.unity
-    guid: 50d5f6c62e4261f48b28ba006a5021d3
   m_configObjects: {}

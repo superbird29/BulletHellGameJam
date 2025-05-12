@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour
             _PlayerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
             _RoundManager = GameObject.Find("Canvas").GetComponent<RoundManager>();
             _EnemyManager = GameObject.Find("EnemyManager").GetComponent<EnemyManager>();
+            Time.timeScale = 1;
             _EnemyManager.Started();
         }
     }
