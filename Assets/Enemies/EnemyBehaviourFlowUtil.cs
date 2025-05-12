@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
-
+#if ( UNITY_EDITOR )
 public class EnemyBehaviourFlowUtil : MonoBehaviour
 {
     [SerializeField] List<BaseMovementBehaviour> movementBehaviours;
@@ -276,3 +276,4 @@ public class EnemyBehaviourFlowUtil : MonoBehaviour
         Debug.Log("Saved Behaviours to " + fullFolderPath);
     }
 }
+#endif
