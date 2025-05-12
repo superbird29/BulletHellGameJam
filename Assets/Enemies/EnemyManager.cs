@@ -9,8 +9,12 @@ public class EnemyManager : MonoBehaviour
     private bool inbetweenRounds = false;
     private bool inbetweenLevels = false;
 
+    private bool finishedWave = false;
+
     public int roundCount;
     public int levelCount;
+
+    public float timeBetweenRounds = 1f;
 
     private EnemyRound currentRound;
     private EnemyLevel currentLevel;
@@ -36,16 +40,19 @@ public class EnemyManager : MonoBehaviour
     {
         if (inbetweenLevels || inbetweenRounds) return;
 
-        if (currentRoundEnemies.Count == 0 && waveQueue.Count == 0)
+        if (currentRoundEnemies.Count == 0 && waveQueue.Count == 0 && finishedWave)
         {
             GameManager.Instance._RoundManager.EndRoundRewards();
 
             if (roundCount < rounds.Count)
             {
+                inbetweenRounds = true;
+                finishedWave = false;
                 StartNextRound(GameManager.Instance._RoundManager.roundDuration);
             }
             else if (levelCount < levels.Count)
             {
+                inbetweenLevels = true;
                 StartNextLevel();
             }
         }
@@ -54,6 +61,7 @@ public class EnemyManager : MonoBehaviour
     public void StartNextLevel()
     {
         inbetweenLevels = true;
+        finishedWave = false;
 
         currentLevel = Instantiate(levels[levelCount]);
         rounds = currentLevel.rounds;
@@ -80,14 +88,16 @@ public class EnemyManager : MonoBehaviour
 
 IEnumerator ManageWaveSequence(float roundDuration)
 {
-    float timeBetweenWaves = roundDuration / Mathf.Max(1, waveQueue.Count);
+    yield return new WaitForSeconds(timeBetweenRounds);
 
+    float timeBetweenWaves = roundDuration / Mathf.Max(1, waveQueue.Count);
     while (waveQueue.Count > 0)
     {
-        var wave = waveQueue.Dequeue();
+        EnemyGroupManager wave = waveQueue.Dequeue();
         SpawnWave(wave);
 
         yield return new WaitUntil(() => currentRoundEnemies.Count > 0);
+
         
         float elapsed = 0f;
 
@@ -99,15 +109,14 @@ IEnumerator ManageWaveSequence(float roundDuration)
             elapsed += Time.deltaTime;
             yield return null;
         }
-
-        // Make sure we don't move on until current wave is fully cleared
-        yield return new WaitUntil(() => currentRoundEnemies.Count == 0);
     }
+    finishedWave = true;
 }
 
 
     void SpawnWave(EnemyGroupManager wave)
     {
+        
         Instantiate(wave, transform.position, Quaternion.identity);
     }
 
