@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Fire Forever
   m_EditorClassIdentifier: 
   nextBehaviour: {fileID: 0}
+  shotSpeed: 5

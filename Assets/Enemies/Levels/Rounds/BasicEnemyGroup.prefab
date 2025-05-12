@@ -47,5 +47,5 @@ MonoBehaviour:
   enemyPrefab: {fileID: 0}
   rows: 1
   columns: 1
-  staggerRows: 1
+  staggerRows: 0
   zone: 3
