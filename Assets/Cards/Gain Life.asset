@@ -16,7 +16,7 @@ MonoBehaviour:
   description: Regain 1 life
   effects:
   - category: 0
-    effectType: 1
+    effectType: 0
     value: 1
     weaponType: 0
     isActive: 0
