@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3245579380989385347}
   - component: {fileID: 8870808021951230053}
-  - component: {fileID: 7614352467447112465}
+  - component: {fileID: 8971552447263798582}
   m_Layer: 0
   m_Name: MiddleOfPlayArea
   m_TagString: Untagged
@@ -78,7 +78,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 18.5, y: 11}
   m_EdgeRadius: 0
---- !u!114 &7614352467447112465
+--- !u!114 &8971552447263798582
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

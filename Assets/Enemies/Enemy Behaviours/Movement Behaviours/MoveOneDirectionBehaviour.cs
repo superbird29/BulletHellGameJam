@@ -39,6 +39,7 @@ public class MoveOneDirectionBehaviour : BaseMovementBehaviour
     }
 
     protected override void UpdateDestination(){
+        
         destination = enemy.transform.position + movementVector;
     }
 }

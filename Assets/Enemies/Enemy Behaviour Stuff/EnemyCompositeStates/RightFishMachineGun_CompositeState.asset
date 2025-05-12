@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32f45f430662e2a49ae1fa0783b3e62b, type: 3}
+  m_Name: RightFishMachineGun_CompositeState
+  m_EditorClassIdentifier: 
+  nextState: {fileID: 0}
+  startingMovementBehaviour: {fileID: 11400000, guid: 9e06c0e55f6e3fe419fcd99d64ad3050, type: 2}
+  startingFiringBehaviour: {fileID: 11400000, guid: 820b48bbfa501d24d884b3dbbf807eb5, type: 2}
+  startingAimingBehaviour: {fileID: 11400000, guid: 1a23996294fcb6d43989181e16d19bce, type: 2}

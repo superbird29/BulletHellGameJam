@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CompositeBehaviour 1
   m_EditorClassIdentifier: 
   nextState: {fileID: 0}
-  startingMovementBehaviour: {fileID: 11400000, guid: 09f4da0210cc54c45a561a81b92aad15, type: 2}
+  startingMovementBehaviour: {fileID: 11400000, guid: 664ebfe19dc870d46919a7439f9aed6b, type: 2}
   startingFiringBehaviour: {fileID: 11400000, guid: 7eccc4c4dc7d56d44b304a047f782384, type: 2}
   startingAimingBehaviour: {fileID: 11400000, guid: 8f1ce4006ffbb654cba8a887d6b8fab9, type: 2}

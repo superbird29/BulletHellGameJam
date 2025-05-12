@@ -10,20 +10,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1170496765906798280, guid: e514774deeb7a6e4ba863eb9b3faab35, type: 3}
       propertyPath: m_Name
-      value: L1 R1 W1
+      value: L1 R9 W 4
       objectReference: {fileID: 0}
     - target: {fileID: 5703223572795317429, guid: e514774deeb7a6e4ba863eb9b3faab35, type: 3}
       propertyPath: rows
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5703223572795317429, guid: e514774deeb7a6e4ba863eb9b3faab35, type: 3}
       propertyPath: zone
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5703223572795317429, guid: e514774deeb7a6e4ba863eb9b3faab35, type: 3}
       propertyPath: enemyPrefab
       value: 
-      objectReference: {fileID: 2182842179692480077, guid: c20a2092d6442b944ab723fa4e9d45d2, type: 3}
+      objectReference: {fileID: 5677339075916080428, guid: 31971b69f8196d342b49670d6289654d, type: 3}
     - target: {fileID: 9077688615231618083, guid: e514774deeb7a6e4ba863eb9b3faab35, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

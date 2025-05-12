@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 0_Behaviour
   m_EditorClassIdentifier: 
   nextBehaviour: {fileID: 0}
-  shotSpeed: 10
+  shotSpeed: 5
   repititions: 3
-  firingCooldown: 1
-  timeBetweenShots: 0.5
+  firingCooldown: 2
+  timeBetweenShots: 1
