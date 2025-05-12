@@ -31,6 +31,10 @@ public class EnemyManager : MonoBehaviour
     private void Start()
     {
         inbetweenLevels = true;
+        //spawnArea = GetComponent<BoxCollider2D>().bounds;
+        //levelCount = 0;
+        //currentRoundEnemies = new List<EnemyStateMachine>();
+        //StartNextLevel();
     }
 
     public void Started()

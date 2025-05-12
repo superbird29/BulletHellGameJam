@@ -19,6 +19,7 @@ public class RoundManager : MonoBehaviour
     public float roundDuration = 10f;
     [SerializeField] bool DrawCards = false;
     [SerializeField] public GameObject LoseScreen;
+    [SerializeField] public GameObject UpgradeScReen;
 
 
 
@@ -45,7 +46,9 @@ public class RoundManager : MonoBehaviour
 
     public void EndRoundRewards()
     {
-        //Time.timeScale = 0;
+        print("ended round");
+        Time.timeScale = 0;
+        GameManager.Instance._DeckManager.GenerateRewards();
         //activate upgrade screen
         //Generate Upgrade Screen
         //Have player chose upgrades

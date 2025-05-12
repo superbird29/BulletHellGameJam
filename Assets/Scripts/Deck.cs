@@ -43,7 +43,7 @@ public class Deck : MonoBehaviour
     // Where in the 2d space the hand is located for cards
     [SerializeField] private Transform handPosition;
     // Where in the 2d space the rewards are located
-    [SerializeField] private Transform rewards;
+    [SerializeField] private GameObject rewards;
     // Number of cards that show up as a rewards
     [SerializeField] private int numberOfCardRewards = 3;
 
@@ -276,7 +276,7 @@ public class Deck : MonoBehaviour
         {
             Vector3 position = new Vector3((i - 1) * cardSpacing, currentHeightSpacing, 0f); //xPosition + 
             // the card object being instantiated
-            GameObject card = Instantiate(cardPrefab, rewards);
+            GameObject card = Instantiate(cardPrefab, rewards.transform);
             Card currentCard = cardPool[Random.Range(0, cardPool.Count)];
             // the position of the card being adjusted
             card.transform.localPosition = position;

@@ -1605,7 +1605,8 @@ MonoBehaviour:
   cardTimer: 10
   roundDuration: 10
   DrawCards: 1
-  LoseScreen: {fileID: 0}
+  LoseScreen: {fileID: 8657404801707064433}
+  UpgradeScReen: {fileID: 7423250572334659901}
 --- !u!1 &8038357164019361918
 GameObject:
   m_ObjectHideFlags: 0
