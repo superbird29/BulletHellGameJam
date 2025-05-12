@@ -83,6 +83,28 @@ public class EnemyBehaviourFlowUtil : MonoBehaviour
     [ContextMenu("Create Composite Behaviour State From Flows")]
     public void SaveCompositeState()
     {
+
+        if (currentCompositeStateFileName.Length == 0)
+        {
+            currentCompositeStateFileName = GetRandomName();
+        }
+
+        if (currentMovementFlowFolderName.Length == 0)
+        {
+            currentMovementFlowFolderName = currentCompositeStateFileName + "MovementFlow";
+        }
+
+        if (currentAimingFlowFolderName.Length == 0)
+        {
+            currentAimingFlowFolderName = currentCompositeStateFileName + "AimingFlow";
+        }
+
+        if (currentFiringFlowFolderName.Length == 0)
+        {
+            currentFiringFlowFolderName = currentCompositeStateFileName + "FiringFlow";
+        }
+
+        
         LinkMovementBehaviours();
         LinkAimingBehaviours();
         LinkFiringBehaviours();
@@ -91,10 +113,7 @@ public class EnemyBehaviourFlowUtil : MonoBehaviour
         state.startingFiringBehaviour = firingBehaviours.Count > 0 ? firingBehaviours[0] : null;
         state.startingMovementBehaviour = movementBehaviours.Count > 0 ? movementBehaviours[0] : null;
 
-        if (currentCompositeStateFileName.Length == 0)
-        {
-            currentCompositeStateFileName = GetRandomName();
-        }
+        
 
         if (!AssetDatabase.IsValidFolder(compositeStateFolderPath))
         {
