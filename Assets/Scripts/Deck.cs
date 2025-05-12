@@ -23,6 +23,8 @@ public class Deck : MonoBehaviour
     [SerializeField] private List<Card> discard = new List<Card>();
     // The reference to all of the prefabedCards made
     [SerializeField] private List<GameObject> prefabedCards = new List<GameObject>();
+    // The reference to the reward cards
+    [SerializeField] private List<GameObject> rewardCards = new List<GameObject>();
     // Number of cards the player can have in their hand
     [SerializeField] private int handSize = 4;
     // For if the player has drawn cards over the handSize
@@ -40,11 +42,17 @@ public class Deck : MonoBehaviour
     [SerializeField] int newRow = 0;
     // Where in the 2d space the hand is located for cards
     [SerializeField] private Transform handPosition;
+    // Where in the 2d space the rewards are located
+    [SerializeField] private Transform rewards;
+    // Number of cards that show up as a rewards
+    [SerializeField] private int numberOfCardRewards = 3;
 
     // Generates the Deck when the scene is started
     public void Start()
     {
-        //GenerateDeck();
+        GenerateDeck();
+        GenerateHand();
+        GenerateRewards();
     }
 
     /// <summary>
@@ -153,6 +161,7 @@ public class Deck : MonoBehaviour
             // Pulls a random card from the draw pile and adds it to hand
             int cardPull = Random.Range(0, deck.Count);
             playerHand.Add(deck[cardPull]);
+            CardEffectParser.Instance.ExecuteCard(deck[cardPull]);
             deck.RemoveAt(cardPull);
         }
 
@@ -232,7 +241,7 @@ public class Deck : MonoBehaviour
             Button button = card.GetComponent<Button>();
             Card currentCard = playerHand[i];
             // What the button does 1. Executes Card 2. Adds card to discard 3. Removes the card from player's hand 4. destroys the cards
-            button.onClick.AddListener(() => 
+            /*button.onClick.AddListener(() => 
             {
                 discard.Add(currentCard);
                 playerHand.Remove(currentCard);
@@ -241,7 +250,7 @@ public class Deck : MonoBehaviour
                 ReloadCards();
                 CardEffectParser.Instance.ExecuteCard(currentCard);
                 Destroy(card);
-            });
+            });*/
             prefabedCards.Add(card);
         }
     }
@@ -256,5 +265,48 @@ public class Deck : MonoBehaviour
         {
             deck.Add(cardPool[Random.Range(0, cardPool.Count)]);
         }
+    }
+
+    /// <summary>
+    /// Generates the player's rewards
+    /// </summary>
+    public void GenerateRewards()
+    {
+        for(int i = 0; i < numberOfCardRewards; i++)
+        {
+            Vector3 position = new Vector3((i - 1) * cardSpacing, currentHeightSpacing, 0f); //xPosition + 
+            // the card object being instantiated
+            GameObject card = Instantiate(cardPrefab, rewards);
+            Card currentCard = cardPool[Random.Range(0, cardPool.Count)];
+            // the position of the card being adjusted
+            card.transform.localPosition = position;
+            // Changing the text of the card prefab to reflect what it does
+            card.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentCard.cardName;
+            card.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = currentCard.description;
+            // Setting up the button for the cards so that when they are select they perform their action
+            Button button = card.GetComponent<Button>();
+            // Name for Debugging purposes
+            card.gameObject.name = currentCard.cardName + " " + i;
+            // What the button does 1. Executes Card 2. Adds card to discard 3. Removes the card from player's hand 4. destroys the cards
+            button.onClick.AddListener(() => 
+            {
+                AddCardToDeck(currentCard);              
+                while(rewardCards.Count > 0)
+                {
+                    Destroy(rewardCards[rewardCards.Count - 1]);
+                    rewardCards.RemoveAt(rewardCards.Count - 1);
+                }
+            });
+            rewardCards.Add(card);
+        }
+    }
+
+    /// <summary>
+    /// Adds a card the player deck
+    /// </summary>
+    /// <param name="card">The card being added</param>
+    public void AddCardToDeck(Card card)
+    {
+        deck.Add(card);
     }
 }
